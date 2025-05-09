@@ -1,0 +1,13 @@
+__pycache__/
+.vs/
+.vscode/
+build/
+*.fls
+*.log
+*.aux
+*.synctex.gz
+*.fdb_latexmk
+.pytest_cache/
+*.swp
+*.out
+*.o
