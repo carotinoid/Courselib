@@ -1,0 +1,55 @@
+\begin{section}
+    {Priority Queue \& Heap}
+\section*{Priority Queue}
+
+\subsection*{Definition}
+
+Priority queue consists of a set of elements (organized by priority, also called key).
+
+For implement priority queue, there are obvious ways.
+\begin{center}
+    \begin{tabular}{p{5cm}cc}
+        \hline
+        & Insert & DeleteMin \\
+        \hline
+        Normal queue & $O(1)$ & $O(n)$ \\
+        Unsorted linked list & $O(1)$ & $O(n)$ \\
+        Sorted linked list & $O(n)$ & $O(1)$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+$O(n)$ seems to much... so we need to find a better way -> Heap!
+
+\subsection*{Heap}
+
+\textbf{heap property}
+\begin{itemize}
+    \item if B is a child node of A, then $p(A) \le p(B)$.
+    \item Implies that an element with the lowest priority is always in the root node (mean-heap) $\leftrightarrow$ (max-heap)
+\end{itemize}
+
+To efficiently implenet to priority queue -> Insert and DeleteMin : $O(\log n)$
+
+There are some types of heap : binary, binomial, fibonacci, 2-3, etc.
+
+\subsubsection*{Binary Heap}
+
+Binary Heap satisfying two properties.
+(1) Complete binary tree (structural property) (can be implemented in an array), (2) Min tree (Heap order property) (p(node) $\le$ p(children))
+\small{We call Complete Binary Tree as CBT.}
+
+\begin{center}
+    \includegraphics*[]{img/Meanheap.png}
+\end{center}
+
+\begin{itemize}
+    \item Insert
+    \item DeleteMin
+\end{itemize}
+
+\textbf{Change Min Heap to Max Heap}
+% // TODO ---
+
+\bigskip
+\end{section}

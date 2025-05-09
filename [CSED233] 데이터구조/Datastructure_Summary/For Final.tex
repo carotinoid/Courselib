@@ -1,0 +1,261 @@
+\documentclass[twocolumn]{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{wrapfig}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\setlength{\columnsep}{0.6in}
+\setlength{\columnseprule}{1pt}
+\begin{document}
+
+\begin{center}
+    \textbf{\LARGE{Data structure}} \\
+    \textbf{\small{Graph}}
+\end{center}
+
+\begin{flushright}
+    Kim JaeHwan
+\end{flushright}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+\section*{Chapter 14. Graph Representations}
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{Terminology}
+
+Graph $G$ = $(V, E)$ \\
+$V$ : a finite set of vertices/nodes\\$n$ : $|V|$, the number of vertices. \\
+$E$ : a finite set of edges/arcs $(v, w)$ where $v, w \in V$\\ $e$ : $|E|$, the number of edges. \\
+
+\bigskip\noindent
+Adjacent.
+
+\bigskip\noindent
+Type of graphs
+\begin{itemize}
+    \item Complete
+    \item Sparse $<$ Dense
+    \item Directed, Undirected
+    \item weighted
+    \item labeled
+\end{itemize}
+
+\bigskip\noindent
+subgraph, induced subgraph.\\
+Induced subgraph includes all the edges that have both endpoints in the inducing set $V_s$, whereas an ordinary subgarph may miss some.\\
+
+\bigskip\noindent
+Path, Cycle, Self-loop, Acylic, Connected graph, In a directed graph, strongly connected, weakly connected. connected components, SCC.\\
+Tree, Spanning tree, minimum-cost spanning tree.
+
+\bigskip\noindent
+Graph representations : Adjacency matrix, Adjacency list(linked / array)
+\newpage
+\begin{center}
+\line(1,0){230}
+\end{center}
+\section*{Chapter 15. Graph Traversals}
+\begin{center}
+\line(1,0){230}
+\end{center}
+Visiting the vertices of a graph in some specific order, DFS, BFS. There are some troublesome cases : If the graph is not connected, unreachable to all vertices. If the graph is contains cycles, infinite loop.Solution is maintainint a mark for each vertex.
+
+\subsection*{DFS}
+DFS : Depth First Search, Going as deep as possible on each child before going to the next sibling.\\
+Recursive implementation : 
+\small{
+\begin{verbatim}
+DFS (v) {
+    mark[v] := visited;
+    for(each unvisited vertex w adjacent from v)
+        DFS(w);
+}
+\end{verbatim}
+}
+\noindent
+Time complexity of DFS is $O(n+e)$ for adjacency list, $O(n^2)$ for adjacency matrix.\\
+\textbf{Applications of DFS: }
+\begin{enumerate}
+    \item Finding path between two vertices.
+    \item Identify connected components. (*)
+\end{enumerate}
+\textbf{Topological Sort (DFS-based, Stack-based): }
+\small{
+\begin{verbatim}
+TOPSORT(v) {
+    mark[v] := visited;
+    for (each unvisited vertex adjacent from v)
+        TOPSORT(w);
+    print(v)
+}
+}
+\end{verbatim}
+\small{I can't understand this code;;} \\
+Queue-based topological sort is possible, check the indegree of each vertex.\\
+
+\subsection*{BFS}
+BFS : Breadth First Search, Going as broad as possible on each depth before going to the next depth \\
+Queue-based implementation :
+\small{
+\begin{verbatim}
+Visit/Mark a start vertex & put into the queue;
+Repeat until the queue is empty {
+    Remove a vertex from the queue;
+    Visit/Mark its unvisited adjacent vertices;
+    Put the newly visited vertices into the queue
+}
+\end{verbatim}
+}
+Same time complexity as DFS, Same properties with respect to graph connectivity, connected components, spanning tree, path finding. There are problems for which BFS is more suitable than DFS and vice versa
+
+\newpage
+\begin{center}
+\line(1,0){230}
+\end{center}
+\section*{Chapter 16. Shortest Path}
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\noindent
+Weighted digraph, (nonnegative cost $C[i, j])$\\
+Path langth / cost \\
+Shortest path problem(SPP) : finding a path btw. two vertices such that the path length is minimized.
+
+\bigskip\noindent
+The type of shortest path problems : 
+\begin{itemize}
+    \item Single-pair SPP : Single source, single destination \\
+    Greedy algorithm : making the locally optimal choice at each stage with the hope of finding a global optimum. \\
+    Possible algorithm : DFS, BFS...
+    \item Single-source SPP : Single source, all destinations
+    Dijkstra's algorithm: \\
+    variables : $D[i]$ : distance from source to vertex $i$.\\
+
+    \smallskip
+    \textbf{! Write a pseudocode with your own words. !}\\
+    \smallskip
+
+    Why Dijkstra's algorithm works? \\
+
+    Complexity \\
+
+    Further Questions : cyclic? negative? \\
+    Could we do better for acyclic graph? \\
+
+    \item Single-destination SPP : (not covered)
+    \item All-pairs SPP : All sources, all destinations
+    Floyd's algorithm : DP solution. \\
+    $A_k[i, j] := min\{ A_{k-1}[i, j], A_{k-1}[i, k] + A_{k-1}[k, j] \}$ \\
+
+    \smallskip
+    \textbf{! Write a pseudocode with your own words. !}\\
+    \smallskip
+    
+    Complexity \\
+
+\end{itemize}
+
+Other shortest path problems :
+\begin{itemize}
+    \item Bellman-Ford algorithm : \\
+    Solves single-source SPP with negative edge weights. \\
+    Time complexity : $O(n \cdot e)$, but slower than Dijkstra's algorithm.
+    \item Johnson's algorithm : \\
+    Solves all-pairs SPP with negative edge weights but no negative cycles. \\
+    Time complexity : $O(n \cdot e + n^2 \cdot log(n))$, may be faster than Floyd's on sparse graph.
+    \item A* algorithm : \\
+    Solve single-pair SPP, using heuristics to speed up the search. \\
+\end{itemize}
+
+\newpage
+Note here with your hands.\\
+\newpage
+\begin{center}
+\line(1,0){230}
+\end{center}
+\section*{Chapter 17. Minimum Spanning Tree}
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\noindent
+Spanning tree $T$ of $G$ is a tree that includes all the vertices of the original graph G. Minimum-cost spanning tree (MST) is a spanning tree whose tree cost is minimum. MST can be used in internet infrastructure, road networks, electronic circuit, water pipes, etc.\\
+\textbf{Possible Greedy Strategies: } Prim's algorithm (a.k.a Prim-Jarnik algorithm), Kruskal's algorithm, Sollin's algorithm.\\
+\begin{itemize}
+    \item Prims's algorithm : \\
+    Start with a 1-vertex tree and grow it into an n-vertex tree by repeatedly adding a cheapest edge and vertex.\\
+    Idea\\
+    Algorithm\\
+    Implement(code)\\
+    Why it works?\\
+    Time complexity\\
+
+    \item Kruskal's algorithm : \\
+    Start with an n-vertex forest, Consider edges in order of increasing edge cost, select edge if it does not form a cycle together with the edges already selected. (using union-find)\\
+    Idea\\
+    Union find and disjoint sets data type\\
+    dynamic connectivity\\
+    naive linking\\
+    link by size\\
+    path compression\\
+    Complexity\\
+
+    \item Sollin's algorithm : \\
+    Start with an n-vertex forest, each components selects a least-cost edge to connect to another component. Eliminate duplicated selections and possible cycles, Repeat until only 1 component remains.\\
+    Idea\\
+    Algorithm\\
+    Complexity\\
+
+\end{itemize}
+
+\noindent
+Euclidean MST\\
+Scientific application : \\
+
+\bigskip
+
+\noindent
+Uniqueness of MST \\
+Prim vs. Kruskal \\
+
+\newpage
+Note here with your hands.\\
+
+\end{document}

@@ -1,0 +1,71 @@
+\begin{section}
+    {About the time complexity}
+
+
+\begin{subsection}
+    {Definition and time complexity}
+\end{subsection}
+\noindent
+Algorithm : a step-by-step procedure for solving a problem in a finite amount of time.
+
+\bigskip\noindent
+How to comopare two algorithms?
+
+\noindent
+Efficiency - Running time (time complexity), Space requirements (space complexity)
+
+\bigskip
+There are two method to check time complexity (1. Empirical studies, 2. Theoretical analysis). First method is programming and testing, but it is not exact. It can be changed by the environment such as hardware and software. So, we need to use theoretical analysis. Theoretical analysis is a high-level description of the algorithm instead of an implementation. No need to be so exact. There are three ways to compare algorithms. (1. Best case, 2. Average case, 3. Worst case)
+\bigskip
+\begin{enumerate}
+    \item Best case(lower bound) : 
+    \textbf{Big-Omega notation} \\
+    $T(n)$ is $\Omega(f(n))$ if there exist a constant $c>0$ and an integer constant $n_0 \ge 1$ such that $T(n) \ge c f(n)$ for all $n \ge n_0$.
+    \item Average case :
+    \textbf{Big-Theta notation} \\
+    $T(n)$ is $\Theta(f(n))$ if $T(n)$ is $O(f(n))$ and $\Omega(f(n))$.
+    \item Worst case(upper bound) :
+    \textbf{Big-Oh notation} \\
+    An algorithm is $O(f(n))$ if there exist a constant $c>0$ and an integer constant $n_0 \ge 1$ such that $T(n) \le cf(n)$ for all $n \ge n_0$. Then we write $T(n) \in O(f(n))$, or $T(n) = O(f(n))$.
+
+    This case is easier to analyze.
+\end{enumerate}
+
+\noindent
+\begin{subsection}
+    {Properties of Big-Oh}
+\end{subsection}
+Addition rule, Product Rule, and others.
+
+There are typical growth rates:
+\begin{center}
+    \begin{tabular}{|rl|rl|}
+        \hline
+        $\Theta(1)$ & constant & $\Theta(n)$ & linear \\
+        $\Theta(\log n)$ & logarithmic & $\Theta(n \log n)$ & log linear \\
+        $\Theta(n^2)$ & quadratic & $\Theta(n^3)$ & cubic \\
+        $\Theta(2^n)$ & exponential & $\Theta(n!)$ & factorial \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\textbf{limitation of analysis}
+\begin{itemize}
+    \item Not account for constant factors, but constant factor ay dominate.
+    \item Not account for different memory access times at different levels of memory hierarchy.
+    \item Programs that do more computation may take less time than those that do less computation.
+\end{itemize}
+
+For example, 1000n vs $n^2$, when interested only in $n < 1000$.
+For example, Cache memory $<<$ MM $<<$ HDD.
+
+\begin{subsection}
+    {Relative of Big-Oh}
+\end{subsection}
+\begin{enumerate}
+    \item Little-oh
+    \item little-omega
+\end{enumerate}
+
+\bigskip
+\end{section}

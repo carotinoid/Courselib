@@ -1,0 +1,73 @@
+\newpage
+\begin{section}
+    {Code Testing}
+    \begin{itemize}
+        \item The ability to test your own code is integral to an understanding of data structures.
+        \begin{itemize}
+            \item Differentiating between requirements and design decisions you made.
+            \item Coming up with test cases is one of the best ways to understand data structures more deeply.
+            \begin{itemize}
+                \item What cases will cause certain implementations to slow down?
+                \item How long do I expect certain operations to take?
+                \item What edge cases are there in the definition?
+                \item Where else might I find bugs?
+            \end{itemize}
+        \end{itemize}
+        \item In the real world, coding projects don’t come with their own tests.
+        \begin{itemize}
+            \item You have to write your own.
+        \end{itemize}
+        \item Learning to test your own code is integral to maturing as a computer scientist.
+    \end{itemize}
+    
+    \begin{itemize}
+        \item Types of Tests
+        \begin{itemize}
+            \item Black Box
+            \begin{itemize}
+                \item Behavior only - requirements
+                \item From an outside point of view
+                \item Does your code uphold its contracts with its users?
+                \item Performance/efficiency
+            \end{itemize}
+            \item White Box
+            \begin{itemize}
+                \item Includes an understanding of the implementation
+                \item Written by the author as they develop their code
+                \item Break apart requirements into smaller steps
+                \item "unit tests" break implementation into single assertions
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{itemize}
+        \item What to Test?
+        \begin{itemize}
+            \item Expected behavior
+            \begin{itemize}
+                \item The main use case scenario
+                \item Does your code do what it should given friendly conditions?
+            \end{itemize}
+            \item Forbidden Input
+            \begin{itemize}
+                \item What are all the ways the user can mess up?
+            \end{itemize}
+            \item Empty/Null
+            \begin{itemize}
+                \item Protect yourself!
+                \item How do things get started?
+                \item 0, -1, null, empty collections
+            \end{itemize}
+            \item Boundary/Edge Cases
+            \begin{itemize}
+                \item First items
+                \item Last item
+                \item Full collections (resizing)
+            \end{itemize}
+            \item Scale
+            \begin{itemize}
+                \item Is there a difference between 10, 100, 1000, 10000 items?
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{section}

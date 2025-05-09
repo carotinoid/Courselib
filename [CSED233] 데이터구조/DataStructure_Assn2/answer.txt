@@ -1,0 +1,16 @@
+[Task 1]
+2
+[Task 1]
+2
+[Task 2]
+A1B2C1D1E0F0
+[Task 3]
+4 2 6 3 1 5 
+1
+1
+[Task 4]
+2
+[Task 5]
+5 -3 2 
+[Task 6]
+6 6 -3 5 

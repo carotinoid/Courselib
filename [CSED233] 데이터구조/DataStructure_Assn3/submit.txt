@@ -1,0 +1,7 @@
+[Task 4]
+Frequencies of alphabetic letters in the given string
+(w, 4) (n, 4) (h, 4) (q, 3) (i, 3) (v, 2) (u, 2) (t, 2) (p, 2) (g, 2) (b, 2) (y, 1) (x, 1) (r, 1) (o, 1) (l, 1) (k, 1) (j, 1) (f, 1) (d, 1)
+Inorder
+(d, 1) (f, 1) (j, 1) (k, 1) (l, 1) (o, 1) (r, 1) (x, 1) (y, 1) (b, 2) (g, 2) (p, 2) (t, 2) (u, 2) (v, 2) (i, 3) (q, 3) (h, 4) (n, 4) (w, 4)
+Preorder
+(t, 2) (x, 1) (j, 1) (d, 1) (f, 1) (o, 1) (l, 1) (k, 1) (r, 1) (g, 2) (y, 1) (b, 2) (p, 2) (u, 2) (h, 4) (i, 3) (v, 2) (q, 3) (w, 4) (n, 4)

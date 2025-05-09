@@ -1,0 +1,95 @@
+\begin{center}
+    \par\noindent\line(1, 0){500}
+\end{center}
+
+\textbf{TIP!}
+
+\begin{itemize}
+    \item Mergesort, quicksort are slower than Insertion sort when approximately $ n \le 15$
+    \item When running quicksort, the ideal case is choosing the median key value.
+    \begin{itemize}
+        \item Use the first or last element, then if the input is sorted, it will be poor.
+        \item Pick an element at random, but using a random number generator is expensive.
+        \item So, we have to select the middle element.
+        \item Using \textbf{median-of-three} rule : choose the median of the first, middle, and last element.
+    \end{itemize}
+    \item Comparing Quicksort vs Heapsort : Quicksort is faster than heap, however quicksort should never be used in application which require a guarantee of response time unless it is treated as an $O(n\log n)$ algorithm.
+    \item Comparing Quicksort vs Mergesort : Quicksort can be implemented in-place, but mergesort can't. No additional memory is required as in Merge sort. In many cases, quicksort can avoid $O(n^2)$ by choosing a right pivot.
+\end{itemize}
+
+
+\bigskip
+\textbf{Stable Sort} : insertion, bubble,merge, couting, bucket
+
+\textbf{Unstable Sort} : quick, heap, shell, selection
+
+\medskip
+\textbf{Comparison sort} : bubble, selection, insertion, heap, merge, quick
+
+\textbf{non-comparison sort} : counting, bucket, radix
+
+
+
+\newpage
+
+\begin{section}
+    {Summary}
+\end{section}
+
+{\textbf{Datastructure}}
+
+\medskip
+\begin{center}
+    \begin{tabular}{|c|c|c|c|p{5.5cm}|}
+    \hline
+    \textbf{Datastructure} & \textbf{Insert} & \textbf{Delete} & \textbf{Locate} & \textbf{Description} \\
+    \hline\hline
+    \textbf{Array-based list} & $O(n)$ & $O(n)$ & $O(n)$ & If you know the proper pointer when insert, then $O(1)$\\ \hline
+    \textbf{Pointer-based list} & $O(1)$ & $O(1)$ & $O(n)$ & \\ \hline
+    \textbf{Cursor-based list} & $O(1)$ & $O(1)$ & $O(1)$ &  \\ \hline
+    \textbf{Array-Based Queue} & $O(1)$ & $O(1)$ & $O(n)$ &  \\ \hline
+    \textbf{Linked Queue} & $O(1)$ & $O(1)$ & $O(n)$ & \\ \hline
+    \textbf{Tree} & $O(n)$ & $O(n)$ & $O(n)$ & According to implementation types, it can be changed. Check some approach of trees. \\ \hline
+    \textbf{Priority Queue} & $O(log n)$ & $O(log n)$ & $O(n)$ &  \\ \hline
+    \textbf{Heaps} & $O(log n)$ & $O(log n)$ & $O(n)$ & \\ \hline
+    \textbf{Binary Search Tree} & $O(log n)$ & $O(log n)$ & $O(log n)$ & worst case, $O(n)$ \\ \hline
+    \textbf{AVL tree} & $O(log n)$ & $O(log n)$ & $O(log n)$ &  \\ \hline
+    \end{tabular}
+\end{center}
+\medskip
+
+{\textbf{Algorithm}}
+
+\medskip
+\begin{center}
+    \begin{tabular}{|c|c|c|c|l|}
+        \hline
+        \textbf{Algorithm} & \textbf{Worst} & \textbf{Average} & \textbf{Best} & \textbf{Description} \\
+        \hline\hline
+        \textbf{Bubble sort} & $O(n^2)$ & $\Theta (n^2)$ & $\Omega (n)$ & Comparison, Stable Sort\\ \hline
+        \textbf{Insertion sort} & $O(n^2)$ & $\Theta (n^2)$ & $\Omega (n)$ & Comparison, Stable Sort\\ \hline
+        \textbf{Selection sort} & $O(n^2)$ & $\Theta (n^2)$ & $\Omega (n^2)$ & Comparison, Unstable Sort\\ \hline
+        \textbf{Bucket sort} & $O(n^2)$ & $\Theta (n+N)$ & $\Omega (n+N)$ &
+        \begin{tabular}{@{}l@{}}
+            Non-Comparison, Stable Sort. \\
+            $N$ is the number of buckets. \\
+            Worst is that all is in only one.
+        \end{tabular} \\ \hline
+        \textbf{Merge sort} & $O(n\log n)$ & $\Theta (n\log n)$ & $\Omega (n\log n)$ &
+        \begin{tabular}{@{}l@{}}
+            Comparison, Stable Sort, \\
+            Divide-and-Conquer \\
+            Recursive(up\&down) \\
+            -or, Non-recursive(upward)
+        \end{tabular} \\ \hline
+        \textbf{Quicksort} & $O(n^2)$ & $\Theta (n\log n)$ & $\Omega (n\log n)$ &
+        \begin{tabular}{@{}l@{}}
+            Comparison, Unstable Sort, \\
+            Worst is that pivot selection \\
+            -is not balanced.
+        \end{tabular} \\ \hline
+        \textbf{Heap sort} & $O(n\log n)$ & $\Theta (n\log n)$ & $\Omega (n\log n)$ & Comparison, Unstable Sort \\ \hline
+    \end{tabular}
+\end{center}
+
+\bigskip
