@@ -1,0 +1,35 @@
+\newpage
+\begin{question}
+Show that each of these pairs of functions are of the same order.
+\begin{enumerate}
+    \item $3x+7, x$
+    \item $\log (x^2+1), \log_2x$
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\begin{enumerate}
+    \item $3x+7, x$
+    Generally, we can use limit of the ratio of two functions to show that pairs of functions are of the same order
+
+    $$\lim_{x \to \infty} \frac {3x + 7} x = 3$$
+
+    Since the limit is a (nonw-zero) constant, $3x+7$ and $x$ are of the same order.
+
+    \item $\log (x^2+1), \log_2x$
+    Let's use same method.
+
+    $$\lim_{x \to \infty} \frac {\log (x^2+1)} {\log_2x} = \lim_{x \to \infty} \frac {\log (x^2+1)} {\frac {\log x} {\log 2}} = \lim_{x \to \infty} \frac {\log (x^2+1)} {\log x} \cdot \log 2$$
+
+    To compute the limit of fraction having log in numerator and denominator, we can use L'Hopital's rule:
+
+    $$\lim_{x \to \infty} \frac {f(x)} {g(x)} = \lim_{x \to \infty} \frac {f'(x)} {g'(x)}$$
+
+    So we get:
+
+    $$\lim_{x \to \infty} \frac {\log (x^2+1)} {\log x} = \lim_{x \to \infty} \frac {\frac {2x} {x^2+1}} {\frac 1 x} = \lim_{x \to \infty} \frac {2x^2} {x^2+1} = 2$$
+
+    So, the limitation of ratio of two functions is a non-zero constant, $2\log 2$, so $\log (x^2+1)$ and $\log_2x$ are of the same order.
+\end{enumerate}

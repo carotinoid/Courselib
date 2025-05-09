@@ -1,0 +1,152 @@
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\section*{Chapter 17. Relations}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{17.1. Definition and Properties}
+
+Binary relation.
+
+\begin{enumerate}
+    \item \textbf{Reflexive: } $\forall x [x \in A \rightarrow (x, x) \in R]$
+    \item \textbf{Symmetric: } $\forall x \forall y [(x, y) \in R \rightarrow (y, x) \in R]$
+    \item \textbf{Antisymmetric: } \\
+    $\forall x \forall y [(x, y) \in R \wedge (y, x) \in R \rightarrow x = y]$
+    \item \textbf{Transitive: } \\
+    $\forall x \forall y \forall z [(x, y) \in R \wedge (y, z) \in R \rightarrow (x, z) \in R]$
+\end{enumerate}
+Combining relations: $R_1 \cup R_2, R_1 \cap R_2, R_1 - R_2$. \\
+The composition of relations: $R_1 \circ R_2$. \\
+Powers of a relation: $R^1 = R, R^{n+1} = R^n \circ R$. \\
+
+\begin{theorem}
+    Relation $R$ is transitive if and only if $R^n \subseteq R$ for all $n \geq 1$.
+\end{theorem}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{17.2. Representing Relations}
+\begin{enumerate}
+    \item \textbf{Ordered pairs: } $R = \{(a, b), (b, c), (c, a)\}$
+    \item \textbf{Matrix: } $R$ is relation from $A$ to $B$, and $A$ has $m$ elements, $B$ has $n$ elements. \\
+    $R = \begin{bmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}$ ex. $m=3, n=3$.
+    \begin{enumerate}
+        \item Reflexivity: All diagonal elements are 1.
+        \item Symmetry: $m_{ij} = 1 \Leftrightarrow m_{ji} = 1$.
+        \item Antisymm: $m_{ij} = 0 \vee m_{ji} = 0$ when $i \neq j$.
+    \end{enumerate}
+    \item \textbf{Directed Graph: } Note an example. \\
+    \begin{tabular}{cc}
+    $R = \begin{bmatrix}
+        0 & 1 & 0 & 1 \\
+        0 & 1 & 0 & 1 \\
+        1 & 1 & 0 & 0 \\
+        0 & 1 & 0 & 0 
+    \end{bmatrix}$
+    &
+    \begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.5cm, semithick]
+    \tikzstyle{every state}=[fill=white,draw=black,text=black]
+
+    \node[state] (A)              {$A$};
+    \node[state] (B) [right of=A] {$B$};
+    \node[state] (C) [below of=B] {$C$};
+    \node[state] (D) [below of=A] {$D$};
+
+    \path (A) edge              node {} (B)
+    (A) edge              node {} (D)
+    (B) edge [loop above] node {} (B)
+    (B) edge [bend right]  node {} (D)
+    (C) edge              node {} (A)
+    (C) edge              node {} (B)
+    (D) edge [bend right] node {} (B);
+
+    \end{tikzpicture}
+    \end{tabular}
+    \begin{enumerate}
+        \item Reflexivity: All nodes have a self-loop.
+        \item Symmetry: If there is an edge from $A$ to $B$, there is an edge from $B$ to $A$.
+        \item Antisymm: If there is an edge from $A$ to $B$, there is no edge from $B$ to $A$.
+        \item Transitivity: (x, y) and (y, z) $\rightarrow$ (x, z).
+    \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{17.3. Closures}
+
+Let $R$ is a relation on a set $A$. Then, $R$ may or may not have the some properties like reflexivity, symmetry, antisymmetry, and transitivity. Then, $S$ is called the \textbf{closure} of $R$ if $R$ with respect to $P$, if there is a relation $S$ with property $P$ containing $R$ such that $S$ is a subset of every relation with property $P$ containing $R$. In other words, $S$ is the smallest relation with property $P$ containing $R$. \\
+\begin{enumerate}
+    \item \textbf{Reflexive Closure: } \\
+    $R \cup \Delta, \Delta = \{(a, a) | a \in A\}$
+    \item \textbf{Symmetric Closure: } \\
+    $R \cup R^{-1}, R^{-1} = \{(b, a) | (a, b) \in R\}$
+    \item \textbf{Transitive Closure: } \\
+    * \textbf{Connectivity relation:} $R^*$ consist of the pairs $(a, b)$ such that there is a path of length at least one from $a$ to $b$. Then, $R^* = \cup _{i=1}^{\infty} R^i$
+\end{enumerate}
+Here are something.\\
+\textbf{path: } if $(a, x_1) \in R, (x_1, x_2) \in R, \cdots, (x_{n-1}, b) \in R$, then $(a, b) \in R^n$, The length of path is $n$.
+\begin{theorem}
+    There is a path of length $n > 0$ from $a$ to $b$ if and only if $(a, b) \in R^n$.
+\end{theorem} 
+
+\noindent
+Then, how to show $R^*$ is transitive closure of $R$? \\
+1. Show $R^*$ is transitive. \\
+2. $R^* \subseteq S$ whenever $S$ is a transitive relation containing $R$. \\
+//TODO !!!!!!!!!!!!!
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{17.4. Equivalence Relations}
+
+\begin{definition}
+    A relation on a set $A$ is called equivalence relation if it is reflexive, symmetric, and transitive. \\
+    Two elements $a$ and $b$ that are related by an equivalence relation are called \textbf{equivalent}, denoted by $a \sim b$.
+\end{definition}
+\begin{example}
+    Let $m$ be an integer with $m > 1$. Show that the relation $R = {(a, b) | a \equiv b \mod m}$ is an equivalence relation on the set of integers. Show that the relation R has reflexive, symmetric, and transitive properties.
+\end{example}
+
+\begin{definition}
+    \textbf{Equivalence class: } Let $R$ be an equivalence relation on a set $A$. The set of all elements that are related to an element $a$ of $A$ is called the equivalence class of $a$, denoted by $[a]_R$. \\
+    $[a]_R = \{s|(a, s) \in R\}$. \\
+    If $b \in [a]_R$, then $b$ is called a representative of this equivalence class.
+\end{definition}
+
+\begin{theorem}
+    Let $R$ be an equivalence relation on a set $A$. Then these statements for element $a$ and $b$ of $A$ are equivalent.
+    \begin{enumerate}
+        \item $aRb$
+        \item $[a] = [b]$
+        \item $[a] \cap [b] \neq \phi$
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}
+    \textbf{Partition: } A partition of a set $A$ is a set of nonempty subsets of $A$ such that every element of $A$ is in exactly one of these subsets. $A_i \neq \phi$, $A_i \cap A_j = \phi$ for $i \neq j$, and $\cup_{i=1}^{\infty} A_i = A$.
+\end{definition}
+
+The equivalcne classes form a partition of the set $A$ because they split $A$ into disjoint subsets.
+
+\begin{theorem}
+    Let $R$ be an equivalence relation on a set $S$. Then the equivalence classes of $R$ form a partition of $S$. Conversely, ggiven a partition $\{A_i | i \in I \}$ of the set $S$, there is an equivalence relation $R$ that has the sets $A_i, i \in I$, as its equivalence classes.
+\end{theorem}
+\begin{proof}
+    Note lecture note.
+\end{proof}

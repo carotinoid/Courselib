@@ -1,0 +1,23 @@
+\newpage
+\begin{question}
+Prove that given a real number $x$ there exist unique numbers
+$n$ and $\epsilon$ such that $x=n+\epsilon$, $n$ is an integer, and
+$0 \le \epsilon < 1$
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\textbf{Existence Proof}
+
+Let $x$ be a real number. Then, $n = \lfloor x \rfloor$ and $\epsilon = x - \lfloor x \rfloor$. Then $\exists x P(x)$ is true by EG.
+
+\bigskip
+
+\noindent\textbf{Uniqueness Proof}
+
+Let's assume that there are two pairs of numbers $(n_1, \epsilon_1)$ and $(n_2, \epsilon_2)$ such that $x = n_1 + \epsilon_1 = n_2 + \epsilon_2$, $n_1, n_2$ are integers, and $0 \le \epsilon_1, \epsilon_2 < 1$.
+
+Then, $n_1 - n_2 = \epsilon_2 - \epsilon_1$. Since $n_1 - n_2$ is an integer, $\epsilon_2 - \epsilon_1$ must be an integer. But $0 \le \epsilon_1, \epsilon_2 < 1$, so $-1 < \epsilon_2 - \epsilon_1 < 1$. Therefore, $\epsilon_2 - \epsilon_1 = 0$. Then, $n_1 - n_2 = 0$, so $n_1 = n_2$ and $\epsilon_1 = \epsilon_2$. So, the pair of numbers is unique.
+

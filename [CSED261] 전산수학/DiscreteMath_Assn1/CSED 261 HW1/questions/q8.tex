@@ -1,0 +1,20 @@
+\newpage
+\begin{question}
+Express each of these system specifications using predicates, quantifiers, and logical connectives.
+\begin{enumerate}
+\item When there is less than 30 megabytes free on the hard disk, a warning message is sent to all users.
+\item No directories in the file system can be opened and no files can be closed when system errors have been detected.
+\item The file system cannot be backed up if there is a user currently logged on.
+\item Video on demand can be delivered when there are at least 8 megabytes of memory available and the connection speed is at least 56 kilobits per second.
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\begin{enumerate}
+    \item Let $P(x)$ be the predicates `There is less than 30 megabytes free on the hard disk $x$' and $Q(y)$ be the predicates `A warning message is sent to user $y$' Then, $$\exists x P(x) \rightarrow \forall y Q(y)$$
+    \item Let $P(x)$ be the predicates `System error $x$ has been detected', $Q(y)$ be the predicates `Directory $y$ in the file system can be open', and $R(z)$ be the predicates `File $z$ can be closed'. Then, $$\exists x P(x) \rightarrow \forall y \forall z(\neg Q(y) \wedge \neg R(z))$$
+    \item Let $P(x)$ be the predicates `User $x$ is currently logged on' and $Q(y)$ be the predicates `The file system $y$ can be backed up'. Then, $$ \exists x (P(x)) \rightarrow \forall y \neg Q(y)$$
+    \item Let $P(x)$ be the predicates `There are at least 8 megabytes of memory $x$ available', $Q(y)$ be the predicates `The connection speed $y$ is at least 56 kilobits per second', and $R(x)$ be the predicates `Video on demand $z$ can be delivered'. Then, $$\exists x \exists y( P(x) \wedge Q(y)) \rightarrow \forall z R(z)$$
+\end{enumerate}

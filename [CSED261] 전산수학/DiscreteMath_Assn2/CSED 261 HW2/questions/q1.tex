@@ -1,0 +1,109 @@
+\begin{question}
+For each of these sets of premises, what relevant conclusion
+or conclusions can be drawn? Explain the rules of inference
+used to obtain each conclusion from the premises.
+\begin{enumerate}
+\item “If I play hockey, then I am sore the next day.” “I
+use the whirlpool if I am sore.” “I did not use the
+whirlpool.”
+\item “If I work, it is either sunny or partly sunny.” “I
+worked last Monday or I worked last Friday.” “It was
+not sunny on Tuesday.” “It was not partly sunny on
+Friday.”
+\item “All insects have six legs.” “Dragonflies are insects.”
+“Spiders do not have six legs.” “Spiders eat dragonflies.”
+\item “Every student has an Internet account.” “Homer
+does not have an Internet account.” “Maggie has an
+Internet account.”
+\item “All foods that are healthy to eat do not taste good.”
+“Tofu is healthy to eat.” “You only eat what tastes
+good.” “You do not eat tofu.” “Cheeseburgers are not
+healthy to eat.”
+\item “I am either dreaming or hallucinating.” “I am not
+dreaming.” “If I am hallucinating, I see elephants running
+down the road.”
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+\subsubsection*{Solutions}
+
+\begin{enumerate}
+    \item let $p$ is ``I play hockey'', $q$ is ``I am sore'', $r$ is ``I use the whirlpool''.
+
+    \begin{tabular}{p{0.2cm} p{5cm} p{8cm}}
+        & \textbf{Step} & \textbf{Reason}\\
+        1.& $q \rightarrow r$ & Premise\\
+        2.& $\neg r$ & Premise\\
+        3.& $\neg q$ & Modus Tollens using (1) and (2).\\
+        4.& $p \rightarrow q$ & Premise \\
+        5.& $\neg p$ & Modus Tollens using (3) and (4) \textbf{Conclusion}.
+    \end{tabular}
+
+    So, Conclusion is $\neg p$, I didn't play hockey.
+
+    \item let $p(x)$ is ``I work on $x$'', $q(x)$ is ``It is sunny on $x$'', $r(x)$ is ``It is partly sunny on $x$''.
+    
+    \begin{tabular}{p{0.2cm} p{5cm} p{8cm}}
+        & \textbf{Step} & \textbf{Reason}\\
+        1.& $\forall x p(x) \rightarrow (q(x) \vee r(x))$ & Premise \\
+        2.& $\neg (q(\text{Tuesday}) \vee r(\text{Tuesday}))$ & Premise \\
+        3.& $p(\text{Tuesday}) \rightarrow (q(\text{Tuesday}) \vee r(\text{Tuesday}))$ & Universal instantiation using (1).\\
+        4.& $\neg p(\text{Tuesday})$ & Modus Tollens using (2) and (3). \textbf{Conclusion 1}\\
+    \end{tabular}
+
+    So, Conclusion is ``I didn't work on Tuesday''.
+
+    \item let $p(x)$ is ``$x$ is insect'' and $q(x)$ is ``$x$ has six legs''.$r(x, y)$ is ``$x$ eats $y$''.
+    
+    \begin{tabular}{p{0.2cm} p{5cm} p{8cm}}
+        & \textbf{Step} & \textbf{Reason}\\
+        1.& $\forall x p(x) \rightarrow q(x)$ & Premise \\
+        2.& $p(\text{dragonfly})$ & Premise \\
+        3.& $p(\text{dragonfly}) \rightarrow q(\text{dragonfly})$ & Universal instantiation using (1). \\
+        4.& $q(\text{dragonfly})$ & Modus Ponens using (2) and (3). \textbf{Conclusion 1}\\
+        5.& $\neg q(\text{spider})$ & Premise \\
+        6.& $p(\text{spider}) \rightarrow q(\text{spider})$ & Universal instantiation using (1).\\
+        7.& $\neg p(\text{spider})$ & Modus Tollens using (5) and (6). \textbf{Conclusion 2}\\
+    \end{tabular}
+
+    So. Conclusions are ``dragonflies have six legs'' and ``spiders are not insects''.
+
+    \item let $p(x)$ is ``$x$ is student'' and $q(x)$ is ``$x$ has an internet account''.
+    
+    \begin{tabular}{p{0.2cm} p{5cm} p{8cm}}
+        & \textbf{Step} & \textbf{Reason}\\
+        1.& $\forall x p(x) \rightarrow q(x)$ & Premise \\
+        2.& $\neg q(\text{Homer})$ & Premise \\
+        3.& $p(\text{Homer}) \rightarrow q(\text{Homer})$ & Universal instantiation using (1).\\
+        4.& $\neg p(\text{Homer})$ & Modus Tollens using (2) and (3). \textbf{Conclusion}\\
+    \end{tabular}
+
+    So, Conclusion is ``Homer is not a student''.
+
+    \item let $p(x)$ is ``$x$ is healthy to eat'', $q(x)$ is ``$x$ tastes good'', and $r(x)$ is ``you eat $x$''.
+    
+    \begin{tabular}{p{0.2cm} p{5cm} p{8cm}}
+        & \textbf{Step} & \textbf{Reason}\\
+        1.& $\forall x p(x) \rightarrow \neg q(x)$ & Premise \\
+        2.& $p(\text{tofu})$ & Premise \\
+        3.& $p(\text{tofu}) \rightarrow \neg q(\text{tofu})$ & Universal instantiation using (1).\\
+        4.& $\neg q(\text{tofu})$ & Modus Ponens using (2) and (3). \textbf{Conclusion}\\
+    \end{tabular}
+
+    So, Conclusion is ``tofu does not taste good''. There are not any other conclusions computed from the premises.
+
+    \item let $p$ is ``I am dreaming'', $q$ is ``I am hallucinating'', and $r$ is ``I see elephants running down the road''.
+    
+    \begin{tabular}{p{0.2cm} p{5cm} p{8cm}}
+        & \textbf{Step} & \textbf{Reason}\\
+        1.& $p \vee q$ & Premise \\
+        2.& $\neg p$ & Premise \\
+        3.& $q$ & Disjunctive syllogism using (1) and (2).\\
+        4.& $q \rightarrow r$ & Premise \\
+        5.& $r$ & Modus Ponens using (3) and (4). \textbf{Conclusion}\\
+    \end{tabular}
+
+    So, Conclusion is ``I see elephants running down the road''.
+
+\end{enumerate}

@@ -1,0 +1,9 @@
+\begin{question}
+Suppose that $p$ and $q$ are prime numbers and that $n = pq$. Use the principle of inclusion–exclusion to find the number of positive integers not exceeding $n$ that are relatively prime to $n$.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+The positive integer $n$ is composed of $p$ and $q$ which are prime numbers. So, We can say that the relatively prime to $n$ are the numbers that are not divisible by $p$ and $q$. There are $\frac n p$ numbers that are divisible by $p$, and $\frac n q$ numbers that are divisible by $q$. But, There are duplicated numbers that are divisible by both $p$ and $q$. So, we need to subtract the number of numbers that are divisible by $p$ and $q$ (principle of inclusion-exclusion). There are $\frac n {pq}$ numbers. Finally, the number of positive integers not exceeding $n$ that are relatively prime to $n$ is $n - \frac n p - \frac n q + \frac n {pq} = n(1 - \frac 1 p)(1 - \frac 1 q)$.d

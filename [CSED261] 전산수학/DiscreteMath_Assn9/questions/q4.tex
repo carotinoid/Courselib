@@ -1,0 +1,69 @@
+\newpage
+\begin{question}
+Suppose that the relation R is irreflexive. Is the
+relation R$^2$ necessarily irreflexive?
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+No, I found a counterexample. It is relation $R$,
+
+$$
+\begin{bmatrix}
+0 & 1 \\
+1 & 1 
+\end{bmatrix}.
+$$
+Then $$
+\begin{bmatrix}
+    0 & 1 \\
+    1 & 1
+\end{bmatrix}
+\circ
+\begin{bmatrix}
+    0 & 1 \\
+    1 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+    1 & 1 \\
+    1 & 1
+\end{bmatrix}
+$$
+(This is not matrix multiplication, but the composition of relations.)\\
+The relation $R = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}$ is reflexive because all diagonal elements are 1. Therefore, the relation $R^2$ is not necessarily irreflexive even though the relation $R$ is irreflexive.\\
+
+\bigskip\noindent
+Additional)\\
+R is, \\
+\begin{center}
+\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.5cm, semithick]
+    \tikzstyle{every state}=[fill=white,draw=black,text=black]
+
+    \node[state] (A)              {$A$};
+    \node[state] (B) [right of=A] {$B$};
+
+    \path
+    (A) edge [bend left]  node {} (B)
+    (B) edge [bend left]  node {} (A)
+    (B) edge [loop right] node {} (B);
+\end{tikzpicture}
+\end{center}
+$R^2$ is,
+\begin{center}
+    \begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.5cm, semithick]
+        \tikzstyle{every state}=[fill=white,draw=black,text=black]
+    
+        \node[state] (A)              {$A$};
+        \node[state] (B) [right of=A] {$B$};
+    
+        \path
+        (A) edge [bend left]  node {} (B)
+        (A) edge [loop left]  node {} (A)
+        (B) edge [bend left]  node {} (A)
+        (B) edge [loop right] node {} (B);
+    \end{tikzpicture}
+\end{center}
+$R$ does not have a self-loop of node $A$, but $R^2$ has a self-loop of every node. Therefore, $R^2$ is not irreflexive.

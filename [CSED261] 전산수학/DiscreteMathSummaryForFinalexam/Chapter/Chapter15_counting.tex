@@ -1,0 +1,89 @@
+
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\section*{Chapter 15. Counting}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{15.1. The Basics of Counting}
+
+We have to count the number of cases to solve a counting problem. For example, uppercase letter 6 digit password which must contain at least one digit, then how many possible passwords are there? The answer is $36^6 - 26^6$. To solve this problem, we can use three basic principles: the product rule, the sum rule, and the subtraction rule. Note that each cases are independent to use these. 
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{15.2. The Pigeonhole Principle}
+
+\begin{theorem}
+    \textbf{The pigeonhole principle: }If $k$ is a possible integer and $k+1$ objects are placed into $k$ boxes, then at least one box contains two or more objects.
+\end{theorem}
+\begin{proof}
+    By contradiction. Suppose none of the $k$ boxes has more than one object, then the total number of objects is at most $k$. This is contradiction.
+\end{proof}
+\begin{corollary}
+    A function $f$ from a set with $k+1$ elements to a set with $k$ elements is not one-to-one by the pigeonhole principle.
+\end{corollary}
+
+\begin{theorem}
+    \textbf{Generalized pigeonhole principle: } If $N$ objects are placed into $k$ boxes, then there is at least one box containing least $\lceil N/k \rceil$ objects.
+\end{theorem}
+\begin{proof}
+    Same as the pigeonhole principle.
+\end{proof}
+
+Note a lots of examples.
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{15.3. Permutations and Combinations}
+
+\begin{definition}
+    \textbf{Permutations: } A permutation of a set of distinct objects is an ordered arrangement of these objects, An ordered arrangement of $r$ elements of a set is called an $r$-permutation. The number of $r$-permutations of a set with $n$ elements is denoted by $P(n,r)$.
+\end{definition}
+\begin{definition}
+    \textbf{Combinations: } An $r$-combination of elements of a set is an unordered selection of $r$ elements from the set. An $r$-combination is simply a subset of the set with $r$ elements. Notation is $C(n, r)$ or $\binom n r$
+\end{definition}
+
+Some easy theorem and corollary.
+\begin{enumerate}
+    \item $P(n, r) = n(n-1)(n-2)\cdots(n-r+1)$
+    \item If $n$ and $r$ are integers with $1 \le r \le n$, then $P(n, r) = \frac{n!}{(n-r)!}$
+    \item $C(n, r) = \frac{n!}{r!(n-r)!}$
+    \item $C(n, r) = C(n, n-r)$, when $0 \le r \le n$
+\end{enumerate}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{15.4. Binomial Coefficients}
+
+Binomial expression is $(x+y)^n = \sum_{k=0}^n \binom n k x^{n-k}y^k$. This is called binomail theorem. There is useful corollary.
+
+\begin{corollary}
+    $$\sum_{k=0}^n \binom n k = 2^n \quad \text{with} \; n \ge 0$$
+\end{corollary}
+\begin{theorem}
+    \textbf{Pascal's Identity: } If $n$ and $k$ are integers with $n\ge k\ge0$, then $binom {n+1} k = \binom n {k-1} + \binom n k$
+\end{theorem}
+\begin{proof}
+    Proof by combinatorial.
+\end{proof}
+
+Pascal's triangle is skipped in this paper.
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{15.5 Generalized Permutations and Combinations}
+
+Easy to understand, already known. Just look lecture notes.

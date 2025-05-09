@@ -1,0 +1,45 @@
+\newpage
+\begin{question}
+Determine whether these are valid arguments.
+\begin{enumerate}
+\item If $x$ is a positive real number, then $x^2$ is a positive real
+number. Therefore, if $a^2$ is positive, where $a$ is a real
+number, then $a$ is a positive real number.
+\item If $x^2\ne0$, where $x$ is a real number, then $x\ne0$. Let a
+be a real number with $a^2\ne0$; then $a\ne0$.
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\begin{enumerate}
+    \item Argument : If $a^2$ is positive, where $a$ is a real number, then $a$ is a positive real number.
+    
+    This argument is false. I'll show that this argument is false by giving a counter example.
+
+    Counter example : $\exists x \neg P(x) \equiv \neg \forall x P(x)$
+
+    Let $P(x)$ be ``$x^2$ is positive, where $x$ is real number, then a is a positive real number.''
+
+    let $c = -1$, then $c^2 = 1$ which is positive. But $c$ is not a positive real number. 
+
+    So, $\neg P(c)$, therefore $\exists x \neg P(x)$ by EG.
+
+    Eventually, $\neg \forall x P(x)$, so the argument is false.
+
+    \bigskip
+
+
+    \item Argument : Let a be a real number with $a^2\ne0$; then $a\ne0$.
+
+    Direct Proof.
+
+    Let $P(x)$ be ``$x^2\ne0$, where $x$ is a real number, then $x\ne0$.''
+
+    $\forall xP(x)$, so $P(a)$ is true by UI.
+
+    So the argument is valid.
+
+    
+\end {enumerate}

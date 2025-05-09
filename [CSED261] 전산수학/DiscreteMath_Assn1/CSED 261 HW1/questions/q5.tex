@@ -1,0 +1,22 @@
+\newpage
+\begin{question}
+Show that $p \leftrightarrow q$ and $(p \land q) \lor (\neg p \land \neg q)$ are logically equivalent.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\indent
+When $p$ and $q$ both true or both false, $p \leftrightarrow q$ is true. Otherwise, $p$ and $q$ are different such as `$p$ is true and $q$ is false', then $p \leftrightarrow q$ is false.
+\bigskip
+
+\noindent We should check $(p \wedge q) \vee (\neg q \wedge \neg q)$ works logically equivalently.
+\begin{enumerate}
+    \item When $p$ and $q$ are both true, $p \wedge q$ is true, $\neg p \wedge \neg q$ is false, so (true $\vee$ false) is true.
+    \item When $p$ is true and $q$ is false, $p \wedge q$ is false, $\neg p \wedge \neg q$ is false, so (false $\vee$ false) is false.
+    \item When $p$ is false and $q$ is true, $p \wedge q$ is false, $\neg p \wedge \neg q$ is false, so (false $\vee$ false) is false.
+    \item When $p$ and $q$ are both false, $p \wedge q$ is false, $\neg p \wedge \neg q$ is true, so (false $\vee$ true) is true.
+\end{enumerate}
+\noindent Therefore, $(p \wedge q) \vee (\neg p \wedge \neg q)$ works equivalently with $p \leftrightarrow q$. They are logically equivalent.
+

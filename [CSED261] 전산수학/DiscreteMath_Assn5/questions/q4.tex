@@ -1,0 +1,11 @@
+\newpage
+\begin{question}
+Show that if $a$, $b$, and $m$ are integers such that $m \geq 2$ and
+$a \equiv b$ (mod $m$), then gcd($a$,$m$) = gcd($b$,$m$).
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\indent\indent
+$a \equiv b$ (mod $m$), then we can represent $a = b + km$ for some integer $k$. Let $x = $ gcd($a$, $m$) and $y = $ gcd($b$, $m$). Then $x$ divides both $a$ and $m$ because x is gcd of them. Then, $x$ can also divide $b = a - km$ because $x$ can divide $a$ and $m$. Therefore, $x$ divides $y$ because $y$ is gcd of $b$ and $m$ and $x$ can divide both. Similary, $y$ divides $a$ and $m$ because $y$ is gcd of $b$ and $m$. Then, $y$ can also divide $a = b + km$ because $y$ can divide $b$ and $m$. Therefore, $y$ divides $x$ because $x$ is gcd of $a$ and $m$ and $y$ can divide both. So, $x$ can divide $y$ and vice versa. This means $x = y$ and gcd($a$, $m$) = gcd($b$, $m$).

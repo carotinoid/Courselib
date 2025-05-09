@@ -1,0 +1,13 @@
+\newpage
+\begin{question}
+Solve the system of congruence $x \equiv 3$ (mod $6$) and
+$x \equiv 4$ (mod $7$) using the method of back substitution.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\indent\indent
+$x \equiv 3$ (mod $6$) implies $x = 3 + 6k$ for some integer $k$.
+Substitute this into the second congruence: $3 + 6k \equiv 4$ (mod $7$).
+Solving this congruence, we get $6k \equiv 1$ (mod $7$), then k is the inverse of $6$ modulo $7$. Because of gcd($6$, $7$) = $1$, we can use the Bezout's theorem to find the inverse. Using the Euclidean algorithm, we have: 7 = 6 $\times$ 1 + 1,  $-1 \times 6 + 1 \times 7 = 1$, so the inverse of $6$ modulo $7$ is $-1$. Finally, some integer $k = 7m - 1$ for some integer $m$. Then, $x = 3 + 6(7m - 1) = 42m - 3$. So $x \equiv -3 \equiv 39$ (mod $42$).

@@ -1,0 +1,34 @@
+\newpage
+\begin{question}
+Show that the set $Z^{+} \times Z^{+}$ is countable.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+Let's $Z^{+} = \{1, 2, 3, \cdots\}$. We can represent the set $Z^{+} \times Z^{+}$ with Cartesian product of two countable sets:
+$$Z^{+} \times Z^{+} = \{(a, b) | a, b \in Z^{+}\}$$
+
+\noindent
+We can write this set as a grid:
+\begin{center}
+    \begin{tabular}{|c|ccccc|}
+        \hline
+        & $b = 1$ & $b = 2$ & $b = 3$ & $b = 4$ & $\cdots$\\
+        \hline
+        $a = 1$& $(1, 1)$ & $(1, 2)$ & $(1, 3)$ & $(1, 4)$ & $\cdots$\\
+        $a = 2$& $(2, 1)$ & $(2, 2)$ & $(2, 3)$ & $(2, 4)$ & $\cdots$\\
+        $a = 3$& $(3, 1)$ & $(3, 2)$ & $(3, 3)$ & $(3, 4)$ & $\cdots$\\
+        $a = 4$& $(4, 1)$ & $(4, 2)$ & $(4, 3)$ & $(4, 4)$ & $\cdots$\\
+        & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\noindent
+Then, we can list all elements of $Z^{+} \times Z^{+}$. The criterion is to move $a+b$ is assending, and if $a+b$ is same, move $a$ is assending. Then, we can list all elements of $Z^{+} \times Z^{+}$ as $(1, 1), (1, 2), (2, 1), (1, 3), (2, 2), (3, 1), (1, 4), \cdots$.
+
+\bigskip
+\noindent
+Finally, conclusion is that $Z^{+} \times Z^{+}$ is countable.

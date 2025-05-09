@@ -1,0 +1,21 @@
+\newpage
+\begin{question}
+Use mathematical induction to show that $\neg\left(p_1 \vee p_2 \vee\right.$ $\left.\cdots \vee p_n\right)$ is equivalent to $\neg p_1 \wedge \neg p_2 \wedge \cdots \wedge \neg p_n$ whenever $p_1, p_2, \ldots, p_n$ are propositions.
+
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{proof}
+    We will use induction. If $n$ is $1$, $\neg (p_1)$ is equivalent to $\neg p_1$. If $n$ is $2$, the statement $\neg (p_1 \vee p_2) = \neg p_1 \wedge \neg p_2$ is true by De Morgan's law. Next, we assume that the statement is true when $n = k$, then we have to prove that the statement is true when $n = k+1$.
+
+    \begin{align*}
+        \neg \left(p_1 \vee p_2 \vee \cdots \vee p_{k+1} \right)
+        &= \neg \left(\left( p_1 \vee p_2 \vee \cdots \vee p_{k} \right) \vee p_{k+1} \right) \\
+        &= \neg \left( p_1 \vee p_2 \vee \cdots \vee p_k \right) \wedge \neg p_{k+1} & \text{by De Morgan's law} (n = 2)\\
+        &= \neg p_1 \wedge \neg p_2 \wedge \cdots \wedge \neg p_k \wedge \neg p_{k+1} & \text{by induction hypothesis}
+    \end{align*}
+    Finally, by induction, the statement is true for all $n \in \mathbb{N}$.
+\end{proof}

@@ -1,0 +1,27 @@
+\newpage
+\begin{question}
+Let $A, B$, and $C$ be sets. Use the the identity $A-B = A \cap \overline{B}$, which holds for any sets $A$ and $B$, and the set identities to show that $(A−B)\cap (B−C)\cap(A−C) = \text{\O}$.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+I'll use the notation $A^c$ to denote the complenet of the set instead overline.
+
+\begin{center}
+
+\begin{tabular}{rl}
+    \hline
+    \textbf{Reason} & \textbf{Expression} \\
+    \hline\hline
+    Given & $(A-B) \cap (B-C) \cap (A-C)$\\
+    Def of difference of set & $=(A \cap B^c) \cap (B \cap C^c) \cap (A \cap C^c)$\\
+    Associative laws & $=A \cap B^c \cap B \cap C^c \cap A \cap C^c$\\
+    Idempotent laws & $=A \cap B \cap B^c \cap C^c$\\
+    Complement laws & $=A \cap \phi \cap C^c$\\
+    Domination laws & $=\phi$\\
+    \hline
+\end{tabular}
+
+\end{center}

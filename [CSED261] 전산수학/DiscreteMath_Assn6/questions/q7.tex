@@ -1,0 +1,22 @@
+\newpage
+\begin{question}
+Show that a directed multigraph having no isolated vertices has an Euler circuit if and only if the graph is weakly connected and the in-degree and out-degree of each vertex are equal.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions} Prove the following two statements:\bigskip
+
+\noindent
+($\leftarrow$) A directed multigraph having no isolated vertices has an Euler circuit, then the graph is weakly connected and the in-degree and out-degree of each vertex are equal.
+
+\begin{itemize}
+    \item Euler circuit visits every nodes, so the graph is weakly connected.
+    \item The start and end node is equal, so the in-degree and out-degree of start(end) node is equal now. During the Euler circuit, we have to enter and exit the node, so the in-degree and out-degree of each node(contain start and end node) are equal.
+\end{itemize}
+
+\bigskip\noindent
+($\rightarrow$) A directed multigraph is weakly connected and the in-degree and out-degree of each vertex are equal, then the graph has an Euler circuit.
+
+\bigskip\noindent
+We already know the theorem that a connected multigraph with a least two vertices has an Euler circuit if and only if each of its vertices has even degree (during class). A graph is weakly connected, so we can know that the every nodes are connected if we ignore the direction. Also, we know that the in-degree and out-degree of each vertex are equal, so every nodes have even degree. Therefore, the graph has an Euler circuit by theorem.

@@ -1,0 +1,13 @@
+\newpage
+\begin{question}
+Suppose that a Bayesian spam filter is trained on a set of 500 spam messages and 200 messages that are not spam. The word “exciting” appears in 40 spam messages and in 25 messages that are not spam. Would an incoming message be rejected as spam if it contains the word “exciting” and the threshold for rejecting spam is 0.9?
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+Let $S$ be the event that message is spam, and $E$ be the event that message contains the word "exciting". The number of spam messages is 500, and the number of messages that are not spam is 200. The number of spam messages that contain the word "exciting" is 40, and the number of messages that are not spam that contain the word "exciting" is 25. \\
+Then, We know $P(E|S) = \frac {40}{500} = 0.08$ and $P(E|\overline{S}) = \frac {25}{200} = 0.125$. Also, $P(S) = 5/7$ and $P(\overline S) = 2/7$\\
+The probability that the message is spam when it contains the word "exciting" is: $$P(S|E) = \frac{P(E|S)P(S)}{P(E)} = \frac{P(E|S)P(S)}{P(E|S)P(S) + P(E|\overline{S})P(\overline{S})} = \frac{0.08 \times 5/7}{0.08 \times 5/7 + 0.125 \times 2/7}\approx 0.615$$
+Then, $P(S|E) \approx 0.615$. So, the message will not be rejected as spam because $0.615< 0.9$.

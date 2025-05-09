@@ -1,0 +1,101 @@
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\section*{Chapter 16. Probability}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{16.1. Introduction to Discrete Probability}
+
+Key terms:
+\begin{itemize}
+    \item \textbf{Experiment: } A procedure that yields one of a given set of possible outcomes.
+    \item \textbf{Sample space: } The set of all possible outcomes of an experiment.
+    \item \textbf{Event: } A subset of the sample space.
+\end{itemize}
+
+\begin{definition}
+    \textbf{Probability ( by Pierre-Simon Laplace): } If $S$ is a finite  sample space for an experiment and $E$ is an event, then the probability of $E$ is $P(E) = \frac{|E|}{|S|}$. ($0 \le P(E) \le 1$)
+\end{definition}
+
+\begin{itemize}
+    \item Complement of $E$: $P(\bar E) = 1 - P(E)$
+    \item Union of $E_1$ and $E_2$: $P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$
+\end{itemize}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{16.2. Probability Theory}
+
+\begin{itemize}
+    \item Assigning Probability: It assumes that all outcomes are equally likely.
+    \item Conditional Probability
+    $$P(E|F) = \frac{P(E \cap F)}{P(F)}$$
+    \item Independence \\
+    The events $E$ and $F$ are independent if and only if $P(E \cap F) = P(E)P(F)$ \\
+    Pairwise independence and Mutual independence
+    \item Bernoulli Trials and the Binomail Distribution\\
+    Suppose an experiment can have only two possible outcomes, each performance of the experiment is called a Bernoulli trial.
+    \item Random Variables \\
+    A random variable is a function from the sample space of an experiment to the set of real numbers. \\
+    \textbf{A random variable is a function. It is not a variable, and it is not random!}
+\end{itemize}
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{16.3. Bayes' Theorem}
+
+\begin{theorem}
+    Suppose that $E$ and $F$ are events from a sample space $S$ such that $P(E) \neq 0$ and $P(F) \neq 0$. Then: $$P(E|F) = \frac{P(E|F)P(F)}{P(E|F)P(F) + P(E|\bar F)P(\bar F)}$$
+\end{theorem}
+\begin{proof}
+    \begin{align*}
+        P(F|E) &= \frac{P(E \cap F)}{P(E)} = \frac{P(E\cap F)}{P(E\cap F) + P(E \cap {\bar F})} \\
+        &= \frac{P(E|F)P(F)}{P(E|F)P(F) + P(E|\bar F)P(\bar F)}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \textbf{Generalized Bayes' Theorem: } Suppose that $E$ is an event from a sample space $S$ and that $F_1, F_2, \cdots F_n$ are \textit{mutually exclusive} events, and assume that $P(E) \neq 0$ for $i = 1, 2, \cdots, n$. Then: $$P(F_i|E) = \frac{P(E|F_i)P(F_i)}{\sum_{j=1}^{n} P(E|F_j)P(F_j)}$$
+\end{theorem}
+
+Interpreting Bayes' Theorem:
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+\begin{itemize}
+    \item The event of out interest $A$
+    \item The event as an observation $B$
+    \item Prior probability $P(A)$, based only on our prior knowledge about A with no observation.
+    \item Likelihood $P(B|A)$, the probability of observing $B$ when $A$ happens
+    \item Posterior probability $P(A|B)$, the probability of $A$ if we observed $B$.
+\end{itemize}
+
+Note lecture note if you need ``A little taste of machine learning'' part.
+
+\begin{center}
+\line(1,0){230}
+\end{center}
+
+\subsection*{16.4. Expected Value and Variance}
+
+\begin{definition}
+    \textbf{Expected Value: } The expected value of a random variable $X(s)$ of the random variable $X(s)$ on the sample sace $S$ is equal to $$E(X) = \sum_{s \in S} P(s) \cdot X(s)$$
+\end{definition}
+
+
+Q. What is the expected value of $n$ mutually independent Bernoulli trials with probability $p$ of success? (np)\\
+
+\begin{itemize}
+    \item $E(X_1 + X_2 + \dots + X_n) = E(X_1) + E(X_2) + \dots + E(X_n)$
+    \item $E(aX + b) = aE(X) + b$
+    \item $E(XY) = E(X)E(Y)$ if $X$ and $Y$ are independent.
+\end{itemize}
+
+Note lecture note if you need ``Average-case computational complexity'' and ``Varaince'' parts.

@@ -1,0 +1,68 @@
+\newpage
+\begin{question}
+Use a merge sort to sort $4,3,2,5,1,8,7,6$ into increasing order. Show all the steps used by the algorithm.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{algorithm}
+\caption{MergeSort (recursive)}\label{alg:cap}
+\begin{algorithmic}
+\State \textbf{Input:} An array $A$ of $n$ elements
+\If{$n = 1$}
+    \State Return $A$
+\ElsIf{$n > 1$}
+    \State $mid \gets \lfloor n/2 \rfloor$
+    \State $L \gets \text{MergeSort}(A[1 \,:\,mid])$
+    \State $R \gets \text{MergeSort}(A[mid+1 \,:\, n])$
+    \State \textbf{return} $\text{Merge}(L, R)$
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Merge}
+\begin{algorithmic}
+    \State \textbf{Input:} Two sorted arrays $left$ and $right$
+    \State $result \gets []$
+    \State $i \gets 0$
+    \State $j \gets 0$
+    \While{$i < \text{length of } left$ \textbf{and} $j < \text{length of } right$}
+        \If{$left[i] \leq right[j]$}
+            \State append $left[i]$ to $result$
+            \State $i \gets i + 1$
+        \Else
+            \State append $right[j]$ to $result$
+            \State $j \gets j + 1$
+        \EndIf
+    \EndWhile
+    \While{$i < \text{length of } left$}
+        \State append $left[i]$ to $result$
+        \State $i \gets i + 1$
+    \EndWhile
+    \While{$j < \text{length of } right$}
+        \State append $right[j]$ to $result$
+        \State $j \gets j + 1$
+    \EndWhile
+    \State \textbf{return} $result$
+\end{algorithmic}
+\end{algorithm}
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Step} & \textbf{Array} \\
+    \hline
+    \textbf{Initial} & $(4,3,2,5,1,8,7,6)$ \\
+    \textbf{divide-1} & $(4,3,2,5)$ \quad $(1,8,7,6)$ \\
+    \textbf{divide-2} & $(4,3)$ \quad $(2,5)$ \quad $(1,8)$ \quad $(7,6)$ \\
+    \textbf{divide-3} & $(4)$ \quad $(3)$ \quad $(2)$ \quad $(5)$ \quad $(1)$ \quad $(8)$ \quad $(7)$ \quad $(6)$ \\
+    \textbf{merge-1} & $(3,4)$ \quad $(2,5)$ \quad $(1,8)$ \quad $(6,7)$ \\
+    \textbf{merge-2} & $(2,3,4,5)$ \quad $(1,6,7,8)$ \\
+    \textbf{merge-3} & $(1,2,3,4,5,6,7,8)$ \\
+    \hline
+\end{tabular}
+\end{center}
+
+Done!

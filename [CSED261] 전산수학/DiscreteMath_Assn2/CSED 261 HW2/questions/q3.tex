@@ -1,0 +1,19 @@
+\newpage
+\begin{question}
+Prove that if $n$ is an integer and $3n+2$ is even, then $n$ is
+even using
+\begin{enumerate}
+\item a proof by contraposition.
+\item a proof by contradiction.
+\end{enumerate}
+\end{question}  
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\textbf{Conjecture}: If $n$ is an integer and $3n+2$ is even, then $n$ is even.
+\begin{enumerate}
+    \item Let's Assume that $n$ is odd. Then $n = 2k+1$ for some integer $k$. Then $$3n+2 = 3(2k+1)+2 = 6k+3+2 = 6k+5 = 2(3k+2)+1$$So, $3n+2$ is odd. Since we have shown $\neg q \rightarrow \neg p, p \rightarrow q$ must hold as well. Conjecture is true.
+
+    \item Let Conjecture be $p \rightarrow q$. Let's assume that $p \wedge \neg q$ is true. Then $3n+2$ is even and $n$ is odd. Then $n = 2k+1$ for some integer $k$. Then $$3n+2 = 3(2k+1)+2 = 6k+3+2 = 6k+5 = 2(3k+2)+1$$So, $3n+2$ is odd. This is a contradiction. So, $p \rightarrow q$ must hold. Conjecture is true.
+\end{enumerate}

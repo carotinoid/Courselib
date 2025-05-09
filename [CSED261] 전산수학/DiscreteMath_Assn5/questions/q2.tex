@@ -1,0 +1,27 @@
+\newpage
+\begin{question}
+Show that a positive integer is divisible by $11$ if and only
+if the difference of the sum of its decimal digits in even-numbered
+positions and the sum of its decimal digits in
+odd-numbered positions is divisible by $11$.
+
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\indent\indent
+First, let's think about the properties of the number $11$. We can make $99$ using $11 \time 9$, Similary, $9999$, $999999$ is possible. This means, one digit number $a \equiv a$ (mod $11$), then two digits number $10 \times b \equiv -b $ (mod $11$) by $11$, because of $10 \equiv -1$ (mod $11$). three digits number $100 \times c \equiv c$ (mod $11$) by $99$, because of $100 = 11\times9 + 1 \equiv 1$ (mod $11$). This property can be applied to any number.
+
+\bigskip
+In conclusion, even-numbered positions, $a \times 10 ^ {2n - 1} \equiv a$ (mod $11$) because of $10 ^ {2n - 1} \equiv 1$ (mod $11$), and odd-numbered positions, $b \times 10 ^ {2n} \equiv -b$ (mod $11$), because of $10 ^{2n} \equiv -1$ (mod $11$)
+
+\bigskip
+Finally, we can get, if the difference of the sum of its decimal digits in even-numbered positions and the sum of its decimal digits in odd-numbered positions is divisible by $11$,
+\begin{align*}
+    N & = a_0 \times 1 + a_1 \times 10 + a_2 \times 100 + \cdots + a_n \times 10 ^ n \\
+    & \equiv a_0 - a_1 + a_2 - a_3 + \cdots \pm a_n  \text{ (mod 11)}\\
+    & \equiv 0 \text{ (mod 11)}
+\end{align*}
+
+So, $N$ is divisible by $11$.

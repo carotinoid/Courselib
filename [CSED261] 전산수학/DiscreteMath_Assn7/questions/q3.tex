@@ -1,0 +1,16 @@
+\newpage
+\begin{question}
+Let $b$ be a fixed integer and $j$ a fixed positive integer. Show that if $P(b), P(b+1), \ldots, P(b+j)$ are true and $[P(b) \wedge P(b+1) \wedge \cdots \wedge P(k)] \rightarrow P(k+1)$ is true for every integer $k \geq b+j$, then $P(n)$ is true for all integers $n$ with $n \geq b$.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{proof}
+    Let $Q$ be the statement $P(b) \wedge P(b+1) \wedge \cdots \wedge P(b+j)$. Then, let $R(k)$ be the statement $Q \wedge P(b+j+1) \wedge \cdots \wedge P(b+j+k)$ for $k \geq b + j$. We will prove that $R(k)$ is true for all $k \geq b+j$ by induction on $k$. \\
+    By assumption, $P(b), P(b+1), \ldots, P(b+j)$ are true. Thus, $Q$ is true.\\
+    \textbf{Base case: } $R(0) = Q$ is true.\\
+    \textbf{Inductive step: } Suppose that $R(k)$ is true for some $k \geq 1$. Then, $Q \wedge P(b+j+1) \wedge \cdots \wedge P(b+j+k)$ is true. By assumption, $[P(b) \wedge P(b+1) \wedge \cdots \wedge P(k)] \rightarrow P(k+1)$ is true for every integer $k \geq b+j$. Thus, $P(b) \wedge P(b+1) \wedge \cdots \wedge P(b+j+k) \rightarrow P(b+j+k+1)$ is true. Therefore, $Q \wedge P(b+j+1) \wedge \cdots \wedge P(b+j+k) \rightarrow P(b+j+k+1)$ is true. Hence, $R(k+1)$ is true.\\
+    Finally, by induction, $R(n)$ is true for all $n \geq b+j$. Therefore, $P(n)$ is true for all integers $n$ with $n \geq b$ by assumption and definition of $R(k)$.
+\end{proof}

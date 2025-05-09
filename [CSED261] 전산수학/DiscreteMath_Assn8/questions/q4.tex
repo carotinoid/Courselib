@@ -1,0 +1,22 @@
+\newpage
+\begin{question}
+Give a combinatorial proof that if $n$ is a positive integer then $\sum_{k=0}^{n}k^{2}\binom{n}{k} = n(n+1)2^{n-2}$. [\textbf{Hint:} Show that both sides count the ways to select a subset of a set of $n$ elements together with two not necessarily distinct elements from this subset. Furthermore, express the righthand side as $n(n-1)2^{n-2} + n2^{n-1}$.]
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+Given expression is, $$\sum_{k=0}^{n}k^{2}\binom{n}{k} = n(n+1)2^{n-2} = n(n-1)2^{n-2} + n 2^{n-1}.$$\\
+We can think about the situation that there are $n$ candidates for committee members and we want to make a committee of any legal size with a leader and two manager, which are not necessarily distinct (i.e., the leader can be one of the managers).\\
+On the one hand, we can divide the situation into two cases.
+\begin{enumerate}
+    \item Select a leader first and determine the others will be or not be the committee members. (2 ways for each member) Then, the number of ways is, $n \cdot 2^{n-1}$.
+    \item Select two managers first and determine the others will be or not be the committee members. Then, the number of ways is, $n(n-1)\cdot 2^{n-2}$.
+\end{enumerate}
+Because the leader can be one of the managers, the total number of ways is $n(n+1)2^{n-2}$ (sum).\\
+On the other hand, by the same fixed size $k$, we can select $k$ committee members and choose a leader or two manager from the committee members.\\
+Then, the number of ways is, $$\displaystyle\sum_{k=0}^n k \cdot \binom n k + \sum_{k=0}^{n}k(k-1)\binom{n}{k} = \sum_{k=0}^{n}k^2\binom{n}{k}.$$\\
+Since we count the same situation in two different ways, the two expressions are equal. So, we can get the result, $$\sum_{k=0}^{n}k^{2}\binom{n}{k} = n(n+1)2^{n-2}.$$
+
+% https://www.quora.com/How-do-you-find-the-sum-sum-limits_-k-0-n-k-2-binom-n-k

@@ -1,0 +1,27 @@
+\newpage
+\begin{question}
+The $n\times n$ matrix $A = \left [ a_{ij} \right ]$ is called a \textbf{diagonal matrix} if $a_{ij} = 0$ when $i \neq j$. Show that the product of two $n\times n$ diagonal matrices is again a diagonal matrix. Give a simple rule for determining this product.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+Let assume that there are two $n\times n$ diagonal matrix $A, B$.Then,
+\begin{center}
+    $\displaystyle A = \begin{bmatrix} a_{1} & 0 & \cdots & 0 \\ 0 & a_{2} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & a_{n} \end{bmatrix}$, $\qquad$ $\displaystyle B = \begin{bmatrix} b_{1} & 0 & \cdots & 0 \\ 0 & b_{2} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & b_{n} \end{bmatrix}$.
+\end{center}
+
+\bigskip\noindent
+We can easily compute the product of two matrices. Let $C$ be $A\times B$, then $c_{ij}$, the element of $i$-th row and $j$-th columes of $C$, is $\displaystyle \sum_{k=1}^{n} a_{ik}b_{kj}$ because of definition.
+
+\bigskip\noindent
+For example,
+\begin{align*}
+    c_{11} & = a_{11}b_{11} + a_{12}b_{21} + \cdots + a_{1n}b_{n1} \\ 
+    & = a_1 b_1 + 0 + \cdots + 0
+\end{align*}
+
+\bigskip\noindent
+Like this example, we can see that $c_{ii} = a_i b_i$ and $c_{ij} = 0$ when $i \neq j$ with easy computation.
+So, $C$ is also a diagonal matrix.

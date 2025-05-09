@@ -1,0 +1,23 @@
+\newpage
+\begin{question}
+Suppose that a department contains 10 men and 15 women. How many ways are there to form a committee with six members if it must have more women than men?
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+There are the pairs of number $(\text{the number of men}, \text{the number of woman}) = (0, 6), (1, 5), (2, 4)$ for the committee which have more women then men. We will calculate the probability of each case and sum them up. In composing the committee, the order of the members does not matter.
+
+\begin{enumerate}[label=(Case \arabic*), leftmargin=*, align=left]
+    \item (man, women) = (0, 6) \\
+    There are $\displaystyle\binom{10}{0} = 1$ ways to choose man, and $\displaystyle\binom{15}{6} = 5005$ ways to choose women. So there are 5005 ways in this case.
+    \item (man, women) = (1, 5) \\
+    There are $\displaystyle\binom{10}{1} = 10$ ways to choose man, and $\displaystyle\binom{15}{5} = 3003$ ways to choose women. So there are 30030 ways in this case.
+    \item (men, women) = (2, 4) \\
+    There are $\displaystyle\binom{10}{2} = 45$ ways to choose man, and $\displaystyle\binom{15}{4} = 1365$ ways to choose women. So there are 61425 ways in this case.
+\end{enumerate}
+Therefore, the total number of ways to form a committee with six members which must have more women then men is $5005 + 30030 + 61425 = 96460$ ways.
+
+\bigskip\noindent
+In non-calculated form, the number of ways is $\displaystyle\binom{10}{0}\displaystyle\binom{15}{6} + \displaystyle\binom{10}{1}\displaystyle\binom{15}{5} + \displaystyle\binom{10}{2}\displaystyle\binom{15}{4} = 96460$ ways.

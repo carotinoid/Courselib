@@ -1,0 +1,52 @@
+\newpage
+
+\newcommand{\abset}[1]{$\{(a, b) | \text{~#1}\}$}
+
+\begin{question}
+Which of these relations on the set of all people are equivalence relations? Determine the properties of an equivalence relation that the others lack.
+
+\begin{enumerate}
+    \item \abset{a and b are the same age}
+    \item \abset{a and b have the same parents}
+    \item \abset{a and b share a common parent}
+    \item \abset{a and b have met}
+    \item \abset{a and b speak a common language}
+\end{enumerate}
+
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+We have to check the three properties of an equivalence relation: reflexivity, symmetry, and transitivity.
+
+\begin{enumerate}
+    \item \abset{a and b are the same age}\\
+    \textbf{reflexivity: } $a$ is the same age as $a$ because $a$ is $a$.\\
+    \textbf{symmetry: } $a$ and $b$ are the same age if and only if $b$ and $a$ are the same age.\\
+    \textbf{transitivity: } If $a$ is the same age as $b$ and $b$ is the same age as $c$, then $a$ is the same age as $c$.\\
+    So, this relation is an equivalence relation.
+    \item \abset{a and b have the same parents} \\
+    \textbf{reflexivity: } $a$ has the same parents as $a$ because $a$ is $a$.\\
+    \textbf{symmetry: } $a$ and $b$ have the same parents if and only if $b$ and $a$ have the same parents.\\
+    \textbf{transitivity: } If $a$ has same parents as $b$ and $b$ has the same parents as $c$, then $a$ has the same parents as $c$.\\
+    So, this relation is an equivalence relation.
+    \item \abset{a and b share a common parent} \\
+    \textbf{reflexivity: } $a$ shares a common parent with $a$ because $a$ is $a$.\\
+    \textbf{symmetry: } $a$ and $b$ share a common parent if and only if $b$ and $a$ share a common parent.\\
+    \textbf{transitivity: } If $a$ shares a common parent with $b$ and $b$ shares a common parent with $c$, but $a$ may not share a common parent with $c$. (only one common parent is enough to satisfy the condition) \\
+    So, this relation is not an equivalence relation.
+    \item \abset{a and b have met} \\
+    \textbf{reflexivity: } $a$ has met $a$ because $a$ is $a$. However, we cannot ensure that $a$ can meet itself, it is awkward.\\
+    \textbf{symmetry: } $a$ has met $b$ if and only if $b$ has met $a$.\\
+    \textbf{transitivity: } If $a$ has met $b$ and $b$ has met $c$, but $a$ may not have met $c$.\\
+    So, this relation is not an equivalence relation.
+    \item \abset{a and b speak a common language} \\
+    \textbf{reflexivity: } $a$ speaks a common language with $a$ because $a$ is $a$.\\
+    \textbf{symmetry: } $a$ speaks a common language with $b$ if and only if $b$ speaks a common language with $a$.\\
+    \textbf{transitivity: } If $a$ speaks a common language with $b$ and $b$ speaks a common language with $c$, However, if $b$ speaks English and Korean, $a$ speaks English and $c$ speaks Korean, then $a$ and $c$ don't speak a common language.\\
+    So, this relation is not an equivalence relation.
+\end{enumerate}
+\noindent
+So, the equivalence relations are 1 and 2. relations 3, 4, and 5 are not equivalence relations because they do not satisfy the transitivity property.

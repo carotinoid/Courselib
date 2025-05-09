@@ -1,0 +1,33 @@
+\newpage
+\begin{question}
+Give a recursive definition of the functions max and min so that $\max \left(a_1, a_2, \ldots, a_n\right)$ and $\min \left(a_1, a_2, \ldots, a_n\right)$ are the maximum and minimum of the $n$ numbers $a_1, a_2, \ldots, a_n$, respectively.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{definition}
+    \textbf{Max of $a_1, a_2, \dots, a_n$}\\
+    $\max(a_1) = a_1$\\
+    $\max(a_1, a_2) =
+    \begin{cases}
+        a_1 & \text{if } a_1 \geq a_2\\
+        a_2 & \text{if } a_1 < a_2
+    \end{cases}$\\
+    $\max(a_1, a_2, \dots, a_n) = \max(a_1, \max(a_2, \dots, a_n))$
+\end{definition}
+
+\bigskip
+
+
+\begin{definition}
+    \textbf{Min of $a_1, a_2, \dots, a_n$}\\
+    $\min(a_1) = a_1$\\
+    $\min(a_1, a_2) =
+    \begin{cases}
+        a_1 & \text{if } a_1 \leq a_2\\
+        a_2 & \text{if } a_1 > a_2
+    \end{cases}$\\
+    $\min(a_1, a_2, \dots, a_n) = \min(a_1, \min(a_2, \dots, a_n))$
+\end{definition}

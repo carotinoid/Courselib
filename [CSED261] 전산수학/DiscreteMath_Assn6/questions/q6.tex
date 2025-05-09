@@ -1,0 +1,16 @@
+\newpage
+\begin{question}
+Show that every connected graph with $n$ vertices has at least $n-1$ edges.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+Let's prove this statement using induction. When the number of vertices $n = 1$, the graph has no edges, so the statement is true. So, we have to prove that if the statement is true for $n = k$, then it is also true for $n = k + 1$.
+
+\bigskip
+Let $G$ be a connected graph with $k + 1$ vertices. Let's remove an arbitrary vertex $v$ from $G$. Then, the graph $G - v$ has $k$ vertices and at least $k - 1$ edges. When we add the vertex $v$ back to the graph, we have to add at least one edge to connect $v$ to the rest of the graph. So, the graph $G$ has at least $k - 1 + 1 = k$ edges. Therefore, the statement is true for $n = k + 1$.
+
+\bigskip
+By induction, the statement is true for all $n \in \mathbb{N}$.
+

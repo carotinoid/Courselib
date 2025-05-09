@@ -1,0 +1,27 @@
+\newpage
+\begin{question}
+How many of the disjunctions $p \lor \neg q$, $\neg p \lor q$, $q \lor r$, $q \lor \neg r$, and $\neg q \lor \neg r$ can be made simultaneously true by an assignment of truth values to $p$, $q$, and $r$?
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{center}
+\begin{tabular}[h]{|ccc|ccccc|r|}
+    \hline
+    p & q & r & $p \lor \neg q$ & $\neg p \lor q$ & $q \lor r$ & $q \lor \neg r$ & $\neg q \lor \neg r$ & correct \\
+    \hline
+    T & T & T & T & T & T & T & F & 4 \\
+    T & T & F & T & T & T & T & T & 5 \\
+    T & F & T & T & F & T & F & T & 3 \\
+    T & F & F & T & F & F & T & T & 3 \\
+    F & T & T & F & T & T & T & F & 3 \\
+    F & T & F & F & T & T & T & T & 4 \\
+    F & F & T & T & T & T & F & T & 4 \\
+    F & F & F & T & T & F & T & T & 4 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\noindent So, when $(p, q, r) = (T, T, F)$, all of the disjunctions can be true simultaneously. Therefore, the answer is \textbf{5}.

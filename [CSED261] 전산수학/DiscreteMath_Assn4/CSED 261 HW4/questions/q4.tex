@@ -1,0 +1,38 @@
+\newpage
+\begin{question}
+An algorithm is called optimal for the solution of a problem with respect to a specified operation if there is no algorithm for solving this problem using fewer operations.
+
+\begin{algorithm}
+    \caption{Finding the Maximum Element in a Finite Sequence}
+    \begin{algorithmic}
+    \Procedure{$max$}{$a_1, a_2, \dots, a_n$: integers}
+    \State $max := a_1$
+    \For{$i := 2$ \textbf{to} $n$}
+        \If{$max < a_i$}
+            \State {$max := a_i$}
+        \EndIf
+    \EndFor
+    \State \Return $max$ \Comment{$max$ is the largest element}
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}
+    \item Show that Algorithm 1 is an optimal algorithm with respect to the number of comparisons of integers.
+    \item Is the linear search algorithm optimal with respect to the number of comparisons of integers?
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{enumerate}
+    \item
+    Let's assume that there is another algorithm 2 that can find max more efficiently than the given algorithm. However, Algorithm 2 also be required to compare $n-1$ times to find the max in worst case, so it is $O(n)$. Therefore, the given algorithm is optimal with respect to the number of comparisons of integers.
+    
+    \item
+    Let $n$ be the size of the list.
+    Then, the linear search algorithm is required to compare $n$ times to find the max in worst case, so it is $O(n)$.
+    However, if input is sorted, we can find the max in $O(1)$ time and any value in $O(\log n)$ time using binary search. Therefore, the linear search algorithm is not optimal with respect to the number of comparisons of integers.
+\end{enumerate}

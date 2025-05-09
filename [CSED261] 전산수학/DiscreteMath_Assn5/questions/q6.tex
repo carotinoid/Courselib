@@ -1,0 +1,37 @@
+\newpage
+\begin{question}
+Suppose that the ciphertext DVE CFMV KF NFEUVI,
+REU KYRK ZJ KYV JVVU FW JTZVETV was produced
+by encrypting a plaintext message using a shift cipher.
+What is the original plaintext?
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\indent\indent
+For decrypting shift cipher, we need to find the key using relative frequences of letters `E' or `T'. In encrypted text ``DVE CFMV KF NFEUVI,
+REU KYRK ZJ KYV JVVU FW JTZVETV'', the most frequent letter is `V'. Let's assume that `V' is encypted is `E' in plaintext, then key of decryption function $f^{-1}(x) = (p-k)$ (mod 26) is $k = 17$. So,
+
+\begin{tabular}{|c|c|}
+    \hline
+    Encrypt & Decrypt \\
+    \hline
+    A $\rightarrow$ R & A $\rightarrow$ J \\
+    B $\rightarrow$ S & B $\rightarrow$ K \\
+    C $\rightarrow$ T & C $\rightarrow$ L \\
+    D $\rightarrow$ U & D $\rightarrow$ M \\
+    E $\rightarrow$ V & E $\rightarrow$ N \\
+    F $\rightarrow$ W & F $\rightarrow$ O \\
+    G $\rightarrow$ X & G $\rightarrow$ P \\
+    H $\rightarrow$ Y & H $\rightarrow$ Q \\
+    I $\rightarrow$ Z & I $\rightarrow$ R \\
+    J $\rightarrow$ A & J $\rightarrow$ S \\
+    $\vdots$ & $\vdots$ \\
+    \hline
+\end{tabular}
+
+\bigskip
+Then, the plain text is,
+
+\textbf{MEN LOVE TO WONDER, AND THAT IS THE SEED OF SCIENCE}.

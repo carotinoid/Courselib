@@ -1,0 +1,78 @@
+\newpage
+\begin{question}
+Compare the number of comparisons used by the insertion sort and the binary insertion sort to sort the list 7, 4, 3, 8, 1, 5, 4, 2.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+Insertion sort (Ascending order)
+\smallskip
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Input & 7, 4, 3, 8, 1, 5, 4, 2& Comparison \\
+    \hline
+    Step 1& ((4, 7)), 3, 8, 1, 5, 4, 2& (4, 7) change \\
+    \hline
+    Step 2& (4, (3, 7)), 8, 1, 5, 4, 2& (3, 7) change\\
+    Step 2& ((3, 4), 7), 8, 1, 5, 4, 2& (3, 4) change\\
+    \hline
+    Step 3& (3, 4, (7, 8)), 1, 5, 4, 2& (7, 8) no-change\\
+    \hline
+    Step 4& (3, 4, 7, (1, 8)), 5, 4, 2& (1, 8) change\\
+    Step 4& (3, 4, (1, 7), 8), 5, 4, 2& (1, 7) change\\
+    Step 4& (3, (1, 4), 7, 8), 5, 4, 2& (1, 4) change\\
+    Step 4& ((1, 3), 4, 7, 8), 5, 4, 2& (1, 3) change\\
+    \hline
+    Step 5& (1, 3, 4, 7, (5, 8)), 4, 2& (5, 8) change\\
+    Step 5& (1, 3, 4, (5, 7), 8), 4, 2& (5, 7) change\\
+    Step 5& (1, 3, (4, 5), 7, 8), 4, 2& (4, 5) no-change\\
+    \hline
+    Step 6& (1, 3, 4, 5, 7, (4, 8)), 2& (4, 8) change\\
+    Step 6& (1, 3, 4, 5, (4, 7), 8), 2& (4, 7) change\\
+    Step 6& (1, 3, 4, (4, 5), 7, 8), 2& (4, 5) change\\
+    Step 6& (1, 3, (4, 4), 5, 7, 8), 2& (4, 4) no-change\\
+    \hline
+    Step 7& (1, 3, 4, 4, 5, 7, (2, 8))& (2, 8) change\\
+    Step 7& (1, 3, 4, 4, 5, (2, 7), 8)& (2, 7) change\\
+    Step 7& (1, 3, 4, 4, (2, 5), 7, 8)& (2, 5) change\\
+    Step 7& (1, 3, 4, (2, 4), 5, 7, 8)& (2, 4) change\\
+    Step 7& (1, 3, (2, 4), 4, 5, 7, 8)& (2, 4) change\\
+    Step 7& (1, (2, 3), 4, 4, 5, 7, 8)& (2, 3) change\\
+    Step 7& ((1, 2), 3, 4, 4, 5, 7, 8)& (1, 2) no-change\\
+    \hline
+\end{tabular}
+
+\bigskip
+\noindent Binary insertion sort (Ascending order)
+\smallskip
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Input & 7, 4, 3, 8, 1, 5, 4, 2& Comparison \\
+    \hline
+    Step 1& 7 & Initial input \\
+    \hline
+    Step 2& 4, 7 & (4, 7) compare (mid : 4)\\
+    \hline
+    Step 3& 3, 4, 7& (4, 3) compare (mid : 4)\\
+    \hline
+    Step 4& 3, 4, 7, 8& (4, 8) compare (mid : 4)\\
+    Step 4& 3, 4, 7, 8& (7, 8) compare (mid : 7)\\
+    \hline
+    Step 5& 1, 3, 4, 7, 8& (4, 1) compare (mid : 4)\\
+    Step 5& 1, 3, 4, 7, 8& (3, 1) compare (mid : 3)\\
+    \hline
+    Step 6& 1, 3, 4, 5, 7, 8& (4, 5) compare (mid : 4)\\
+    \hline
+    Step 7& 1, 3, 4, 4, 5, 7, 8& (4, 4) compare (mid : 4)\\
+    \hline
+    Step 8& 1, 2, 3, 4, 4, 5, 7, 8& (4, 2) compare (mid : 4)\\
+    Step 8& 1, 2, 3, 4, 4, 5, 7, 8& (3, 2) compare (mid : 3)\\
+    \hline
+\end{tabular}
+
+\bigskip
+\textbf{Conclusion} : The number of comparisons used by the insertion sort is 22 and the number of comparisons used by the binary insertion sort is 11. The binary insertion sort is faster than the insertion sort.

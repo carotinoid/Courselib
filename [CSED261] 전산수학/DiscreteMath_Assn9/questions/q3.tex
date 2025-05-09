@@ -1,0 +1,18 @@
+\newpage
+\begin{question}
+Suppose that the relation R is reflexive. Show that R* is
+reflexive.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+$R^*$ is the transitive closure of $R$, so $R^* = \cup _{i = 1} ^{\infty} R^i$ when $R^1 = R$, $R^n = R^{n-1} \circ R$. To prove this problem, we should show two things:
+\begin{enumerate}
+    \item \textbf{The composition of two reflexive relations is reflexive.}\\
+    Let $R_1, R_2$ are reflexive relations, and $R = R_1 \circ R_2$. Then for all $x \in A$, $xRx$ holds because $xR_1x$ and $xR_2x$ hold. Therefore, $R$ is reflexive.
+    \item \textbf{The union of two reflexive relations is reflexive.}\\
+    Let $R_1, R_2$ are reflexive relations, and $R = R_1 \cup R_2$. Then for all $x \in A$, $xRx$ holds because $xR_1x$ or $xR_2x$ holds. Therefore, $R$ is reflexive.
+\end{enumerate}
+Because $R^*$ is constructed as the union and composition of reflexive relations $R$, $R^*$ is reflexive.

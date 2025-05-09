@@ -1,0 +1,34 @@
+\newpage
+\noindent Below two questions are related to inhabitants of an island on which there are three kinds of people: knights who always tell the truth, knaves who always lie, and spies who can either lie or tell the truth. You encounter three people, A, B, and C. You know one of these people is a knight, one is a knave, and one is a spy. Each of the three people knows the type of person each of other two is. For each of these situations, if possible, determine whether there is a unique solution and determine who the knave, knight, and spy are. When there is no unique solution, list all possible solutions or state that there are no solutions.
+\begin{question}
+A says “C is the knave,” B says “A is the knight,” and C says “I am the spy.”
+\end{question}
+\begin{question}
+A says “I am the knave,” B says “I am the knave,” and C says “I am the knave.”
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\textbf{Total possible case:}
+$$\begin{aligned}
+    (A, B, C) = \{(knight, spy, knave), (knight, knave, spy), (spy, knight, knave), \\ (knave, knight, spy), (spy, knave, knight), (knave, spy, knight)\}
+\end{aligned}$$
+\textbf{Question 3:}
+\begin{enumerate}
+    \item \textbf{True}. A is knight, so C should be knave. This case is True.
+    \item \textbf{False}. A is knight, so C should be knave but C is spy, so this case is false
+    \item \textbf{False}. B is knight, so A should be knight. However A is spy, so false.
+    \item \textbf{False}. B is knight, so A should be knight. However A is knave, so false
+    \item \textbf{False}. C is knight, then C is also spy. This case is false.
+    \item \textbf{False}. C is knight, then C is also spy. This case is false.
+\end{enumerate}
+Possible case is,
+$$(A, B, C) = (knight, spy, knave)$$
+\bigskip
+
+\noindent\textbf{Question 4:}
+\medskip
+
+ All says they are knave themselves. If one of them is knight, then also he should be knave. So, all cases are false. There is no solution.

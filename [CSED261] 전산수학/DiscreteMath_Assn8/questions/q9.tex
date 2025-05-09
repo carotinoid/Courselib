@@ -1,0 +1,19 @@
+\newpage
+\begin{question}
+Prove the law of total expectations.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+The law of total expectation asserts that the expected value of a random variable is equal to the expected value of its conditional expectation, $$E[X] = E[E[X|Y]].$$
+
+\begin{align*}
+    E[X] &= \sum_{x} x \cdot P(X = x) \\
+    E[E[X|Y]] &= \sum_{x} \sum_{y} x \cdot P(X = x | Y = y) \cdot P(Y = y)\\
+    &= \sum_x \sum_y x \cdot P(X = x, Y = y) \because \text{law of conditional probability}\\
+    &= \sum_x x \cdot \sum_y P(X = x, Y = y) \\
+    &= \sum_x x \cdot P(X = x) \\
+    &= E[X]
+\end{align*}

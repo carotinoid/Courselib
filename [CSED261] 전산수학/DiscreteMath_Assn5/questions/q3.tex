@@ -1,0 +1,48 @@
+\newpage
+\begin{question}
+Use the Euclidean algorithm to find
+\begin{enumerate}[label=(\alph*)]
+\item gcd(1, 5)
+\item gcd(100, 101)
+\item gcd(123, 277)
+\item gcd(1529, 14039)
+\item gcd(1529, 14038)
+\item gcd(11111, 111111)
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+\begin{enumerate}[label=(\alph*)]
+\item
+$5 = 5 \times 1 + 0$, gcd(1, 5) = 1
+
+\item
+$101 = 100 \times 1 + 1$, gcd(100, 101) = gcd(1, 100) \\
+$100 = 1 \times 100 + 0$, gcd(1, 100) = 1
+
+\item
+$277 = 123 \times 2 + 31$, gcd(123, 277) = gcd(31, 123) \\
+$123 = 31 \times 3 + 30$, gcd(31, 123) = gcd(30, 31) \\
+$31 = 30 \times 1 + 1$, gcd(30, 31) = gcd(1, 30) \\
+$30 = 1 \times 30 + 0$, gcd(1, 30) = 1
+
+\item
+$14039 = 1529 \times 9 + 278$, gcd(1529, 14039) = gcd(278, 1529) \\
+$1529 = 278 \times 5 + 139$, gcd(278, 1529) = gcd(139, 278) \\
+$278 = 139 \times 2 + 0$, gcd(139, 278) = 139
+
+\item
+$14038 = 1529 \times 9 + 277$, gcd(1529, 14038) = gcd(277, 1529) \\
+$1529 = 277 \times 5 + 144$, gcd(277, 1529) = gcd(144, 277) \\
+$277 = 144 \times 1 + 133$, gcd(144, 277) = gcd(133, 144) \\
+$144 = 133 \times 1 + 11$, gcd(133, 144) = gcd(11, 133) \\
+$133 = 11 \times 12 + 1$, gcd(11, 133) = gcd(1, 11) \\
+$11 = 1 \times 11 + 0$, gcd(1, 11) = 1
+
+\item
+$111111 = 11111 \times 10 + 1$, gcd(11111, 111111) = gcd(1, 11111) \\
+$11111 = 1 \times 11111 + 0$, gcd(1, 11111) = 1
+
+\end{enumerate}

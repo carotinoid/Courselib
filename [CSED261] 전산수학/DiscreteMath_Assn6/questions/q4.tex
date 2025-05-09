@@ -1,0 +1,20 @@
+\newpage
+\begin{question}
+Suppose that $G$ and $H$ are isomorphic simple graphs. Show that their complementary graphs $\overline{G}$ and $\overline{H}$ are also isomorphic.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+Let $f: V(G) \to V(H)$ be an isomorphism between garph $G$ and $H$. This means, for any two vertices $a, b \in V(G)$, $a$ and $b$ are adjacent in $G$, then $f(a)$ and $f(b)$ are adjacent in $H$.
+\bigskip
+
+Now, let's consider an isomorphism between complementary graphs $\overline{G}$ and $\overline{H}$. We define a function $g: V(\overline{G}) \to V(\overline{H})$ which $f = g$. Because $G$ and $H$ are isomorphic, we know that $f$ is a bijection, also $g$ is. Then, let's prove that $g$ is an isomorphism between $\overline{G}$ and $\overline{H}$.
+
+\begin{itemize}
+  \item Assume that $u, v \in V(\overline{G})$ and $u$ and $v$ are adjacent in $\overline{G}$, then $u$ and $v$ are not adjacent in $G$ because of property of complementary. Since $f$ is an isomorphism between $G$ and $H$, $f(u)$ and $f(v)$ are not adjacent in $H$. This implies that $g(u)$ and $g(v)$ are adjacent in $\overline{H}$.
+  \item Assume that $u, v \in V(\overline G)$ and $u$ and $v$ are not adjacent in $\overline G$. Then, $u$ and $v$ are adjacent in $G$, because of complementary. Then, $f(u)$ and $f(v)$ are adjacent in $H$ because $f$ is an isomorphism. This implies that $g(u)$ and $g(v)$ are not adjacent in $\overline{H}$.
+\end{itemize}
+
+So, the function $g$ between $\overline{G}$ and $\overline{H}$ maintains isomorphism from the function $f$ between $G$ and $H$. Therefore, $\overline{G}$ and $\overline{H}$ are isomorphic.

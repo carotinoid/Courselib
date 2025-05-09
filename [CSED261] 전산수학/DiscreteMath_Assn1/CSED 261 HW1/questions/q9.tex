@@ -1,0 +1,33 @@
+\newpage
+\begin{question}
+Let F(x, y) be the statement “x can fool y,” where the domain consists of all people in the world. Use quantifiers to express each of these statements.
+\begin{enumerate}
+\item Everybody can fool Fred.
+\item Evelyn can fool everybody.
+\item Everybody can fool somebody.
+\item There is no one who can fool everybody.
+\item Everyone can be fooled by somebody.
+\item No one can fool both Fred and Jerry.
+\item Nancy can fool exactly two people.
+\item There is exactly one person whom everybody can fool.
+\item No one can fool himself or herself.
+\item There is someone who can fool exactly one person besides himself or herself.
+\end{enumerate}
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solutions}
+
+\begin{enumerate}
+    \item $\forall x F(x, \text{Fred})$
+    \item $\forall x F(\text{Evelyn}, x$)
+    \item $\forall x \exists y F(x, y)$
+    \item $\neg \exists x \forall y F(x, y)$
+    \item $\forall x \exists y F(y, x)$
+    \item $\neg \exists x (F(x, \text{Fred})) \wedge (F(x, \text{Jerry}))$
+    \item $\exists x \exists y (\neg(x = y) \wedge F(\text{Nancy}, x) \wedge F(\text{Nancy}, y) \wedge (\forall z (F(\text{Nancy}, z) \rightarrow (z = x \vee z = y))))$
+    \item $\forall y (\exists x (F(x, y)) \wedge \exists z(F{z, y})) \rightarrow (x = z)$
+    \item $ \neg \exists x F(x, x)$
+    \item $\exists x \exists y (\neg(x = y) \wedge F(x, y) \wedge \neg \exists z (F(x, z) \wedge \neg(z = y)))$
+\end{enumerate}

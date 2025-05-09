@@ -1,0 +1,10 @@
+\newpage
+\begin{question}
+How many different strings can be made from the letters in \textit{MISSISSIPPI}, using all the letters?
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+The word \textit{MISSISSIPPI} has 11 letters with 4 \textit{I}'s, 4 \textit{S}'s, 2 \textit{P}'s, and 1 \textit{M}. This case is multinomial coefficient. Ths answer is, $$\frac{11!}{4!\,4!\,2!\,1!} = 34650.$$ If all letters are distinct, the answer would be $11!$. However, since there are repeating letters, so we have to divide the effect of repeating letters. For example, \textit{I} has 4 repeating letters, so there are $4!$ ways to arrange them. We have to do the same for \textit{S} and \textit{P} as well, then we get the answer.

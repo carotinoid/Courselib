@@ -1,0 +1,20 @@
+\newpage
+\begin{question}
+Show that if $E$ and $F$ are independent events, then $\overline{E}$ and $\overline{F}$ are also independent events.
+\end{question}
+
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\subsubsection*{Solution}
+
+Because $E$ and $F$ are independent events, we have: $$P(E \cap F) = P(E) \cdot P(F)$$
+To check if $\overline{E}$ and $\overline{F}$ are independent events, we need to check if $P(\overline{E} \cap \overline{F}) = P(\overline{E}) \cdot P(\overline{F})$ holds. \\
+Since the definition of complement, $$P(\overline{E}) = 1 - P(E), \; P(\overline{F}) = 1 - P(F).$$ Then,
+\begin{align*}
+P(\overline{E} \cap \overline{F})
+&= 1 - P(\overline{\overline{E} \cap \overline{F}}) = 1 - P(E \cup F)\\
+&= 1 - \left(P(E) + P(F) - P(E \cap F)\right)\\
+&= 1 - P(E) - P(F) + P(E) \cdot P(F)\\
+&= (1 - P(E)) \cdot (1 - P(F)) = P(\overline{E}) \cdot P(\overline{F})
+\end{align*}
+Therefore, $\overline{E}$ and $\overline{F}$ are independent events.
