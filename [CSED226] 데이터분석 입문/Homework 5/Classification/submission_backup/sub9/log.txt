@@ -1,0 +1,12 @@
+Scaler: StandardScaler()
+Number of columns: 19
+Number of rows: 15000
+Columns: PLAYER_AGE FGM FGA FG_PCT FG3M FG3A FG3_PCT FTM FTA FT_PCT OREB DREB REB AST STL BLK TOV PF PTS 
+Number of selected features: 14
+Selected features: PLAYER_AGE, FGA, FG_PCT, FG3A, FTA, FT_PCT, OREB, DREB, REB, AST, STL, BLK, PF, PTS, 
+Model: rf
+Validation: skf
+Search: random
+Parameters: {'n_estimators': [50, 100, 200, 300, 400, 500], 'max_features': [1, 2, 'sqrt', 'log2'], 'max_depth': [4, 6, 8, 10], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4], 'criterion': ['gini', 'entropy']}
+Best parameters: {'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 10, 'criterion': 'gini'}
+Best score: 0.6500666666666667

@@ -1,0 +1,8 @@
+Number of columns: 19
+Number of rows: 11952
+Columns: PLAYER_AGE FGM FGA FG_PCT FG3M FG3A FG3_PCT FTM FTA FT_PCT OREB DREB REB AST STL BLK TOV PF PTS 
+Number of selected features: 14
+Selected features: PLAYER_AGE, FGA, FG_PCT, FG3A, FTA, FT_PCT, OREB, DREB, REB, AST, STL, BLK, PF, PTS, 
+Model: <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+Best parameters: {'n_estimators': 150, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 10, 'criterion': 'gini'}
+Best score: 0.6400605128366661

@@ -1,0 +1,8 @@
+Number of columns: 19
+Number of rows: 11952
+Columns: PLAYER_AGE FGM FGA FG_PCT FG3M FG3A FG3_PCT FTM FTA FT_PCT OREB DREB REB AST STL BLK TOV PF PTS 
+Number of selected features: 14
+Selected features: PLAYER_AGE, FGA, FG_PCT, FG3A, FT_PCT, OREB, DREB, REB, AST, STL, BLK, TOV, PF, PTS, 
+Model: <class 'xgboost.sklearn.XGBClassifier'>
+Best parameters: {'colsample_bytree': 1.0, 'gamma': 1.5, 'max_depth': 4, 'min_child_weight': 1, 'subsample': 0.8}
+Best score: 0.6460007454733494
