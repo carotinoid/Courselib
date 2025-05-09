@@ -1,0 +1,10 @@
+Utils.py
+dotProduct(d1, d2)
+increment(d1, scale, d2)    : d1 += scale * d2;
+readExamples(path)          : Reads a set of training examples.
+evaluatePredictor(examples, predictor)
+outputWeights(weights, path)
+verbosePredict(phi, y, weights, out)
+outputErrorAnalysis(examples, featureExtractor, weights, path)
+interactivePrompt(featureExtractor, weights)
+`

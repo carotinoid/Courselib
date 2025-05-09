@@ -1,0 +1,131 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+
+% %-------------------------------------------
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{acknowledgement}[theorem]{Acknowledgement}
+% % \newtheorem{algorithm}[theorem]{Algorithm}
+% \newtheorem{axiom}[theorem]{Axiom}
+% \newtheorem{case}[theorem]{Case}
+% \newtheorem{claim}[theorem]{Claim}
+% \newtheorem{conclusion}[theorem]{Conclusion}
+% \newtheorem{condition}[theorem]{Condition}
+% \newtheorem{conjecture}[theorem]{Conjecture}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{criterion}[theorem]{Criterion}
+% \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{example}[theorem]{Example}
+% \newtheorem{exercise}[theorem]{Exercise}
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{notation}[theorem]{Notation}
+% \newtheorem{problem}[theorem]{Problem}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{remark}[theorem]{Remark}
+% \newtheorem{solution}[theorem]{Solution}
+% \newtheorem{summary}[theorem]{Summary}
+% \theoremstyle{definition}
+% \newtheorem{question}{Question}
+
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0in}
+\begin{document}
+
+\section*{Answers of Writing Sections}
+
+\begin{flushright}
+    20230499, KimJaeHwan
+\end{flushright}
+
+\section*{Problem 2: Extended Sudoku as a CSP \tiny(pencil icon)}
+
+Sudoku is a popular logic-based, combinatorial number-placement puzzle. The classic version consists of a $9 \times 9$ grid divided into nine $ 3 \times 3$ subgrids or blocks. The objective is to sfill the grid so that each row, column, and block contains all digits from 1 to 9 exactly once.
+
+You are given as \textbf{extended} Sudoku puzzle on a $9 \times 9$ grid with the following rules:
+
+\medskip
+\textbf{Standard Sudoku Rules:}
+\begin{itemize}[noitemsep]
+    \item Each row must obtain the digits 1 through 9 exactly once.
+    \item Each column must obtain the digits 1 through 9 exactly once.
+    \item Each of the nine $3 \times 3$ blocks must contain the digits 1 through 9 exactly once.
+\end{itemize}
+\textbf{Extended Sudoku Rules:}
+\begin{itemize}[noitemsep]
+    \item The digits on the main diagonal from the top-left to the bottom-right must be contain the digits 1 through 9 exactly once.
+    \item The digits on the main diagonal from the top-right to the bottom-left must be contain the digits 1 through 9 exactly once.
+\end{itemize}
+
+\subsection*{Problem 2a: CSP Modeling [5 points]}
+Formulate the extended Sudoku puzzle described above as a Constraint Satisfaction Problem (CSP) by specifying the \textbf{variables}, \textbf{domains}, and \textbf{constraints}.
+
+\subsubsection*{Problem 2a-1 [1 points]}
+Define the variables for extended Sudoku.
+
+\line(1,0){229}\textbf{ Answer}\line(1,0){229}
+
+
+\line(1,0){500}
+
+\subsubsection*{Problem 2a-2 [1 points]}
+Define the domains for extended Sudoku.
+
+\line(1,0){229}\textbf{ Answer}\line(1,0){229}
+
+\line(1,0){500}
+
+\subsubsection*{Problem 2a-3 [3 points]}
+Define the constraints for extended Sudoku.
+
+\line(1,0){229}\textbf{ Answer}\line(1,0){229}
+
+\line(1,0){500}
+
+\newpage
+\subsection*{Problem 2b: Solving Strategy [5 points]}
+Suppose you are solving the extended Sudoku puzzle using the AC-3 algorithm. AC-3 enforces arc consistency by checking all arcs of constraints between variables. When the domain of a variable has values removed, the algorithm revisits the other arcs connected to that variable to ensure consistency.
+
+\subsubsection*{Problem 2b-1 [2 points]}
+Define all the arcs representing constraints between variables in the extended Sudoku puzzle. Consider onlyboth the standard Sudoku constraints (rows, columns, and 3x3 blocks) as well as the additional diagonal constraints.
+
+Hint) An arc is a directed pair $(X_i, X_j)$ where $X_i$ and $X_j$ are variables connected by a constraints. For each sudoku constraint, from an arc for every pair.
+
+\line(1,0){229}\textbf{ Answer}\line(1,0){229}
+
+\line(1,0){500}
+\subsubsection*{Problem 2b-2 [3 points]}
+While AC-3 is useful for enforcing local consistency, it may have limitations in solving more complex puzzles like the extended Sudoku. One alternative approach is using \textbf{K-consistency}. In K-consistency, any consistent assignment to (k-1) variables can be extended to the kth variable in a way that satisfies the constraints for k variables.
+\begin{enumerate}[noitemsep]
+    \item Briefly describe one potential limitation of the AC-3 algorithm when applied to extended Sudoku [1 point].
+    \item Reformulate the constraints frome Problem 2a-3 in \textbf{n-ary} form to make them suitable for use in a K-consistency algorithm [2 points].
+\end{enumerate}
+
+Hint) When writing n-ary constraints, use the expression \verb_AllDifferent(Vars)_ to describe that all variables in \verb_Vars_ differ from one another.
+
+\line(1,0){229}\textbf{ Answer}\line(1,0){229}
+
+\line(1,0){500}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

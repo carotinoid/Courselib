@@ -1,0 +1,128 @@
+# 20230499 KIM JaeHwan
+
+import util, math, random
+from collections import defaultdict
+from util import ValueIteration
+
+
+############################################################
+# Problem 1a: BlackjackMDP
+
+class BlackjackMDP(util.MDP):
+    def __init__(self, cardValues, multiplicity, threshold, peekCost):
+        """
+        cardValues: array of card values for each card type
+        multiplicity: number of each card type
+        threshold: maximum total before going bust
+        peekCost: how much it costs to peek at the next card
+        """
+        super().__init__()
+
+        self.cardValues = cardValues
+        self.multiplicity = multiplicity
+        self.threshold = threshold
+        self.peekCost = peekCost
+
+    # Return the start state.
+    # Look at this function to learn about the state representation.
+    # The first element of the tuple is the sum of the cards in the player's
+    # hand.
+    # The second element is the index (not the value) of the next card, if the player peeked in the
+    # last action.  If they didn't peek, this will be None.
+    # The final element is the current deck.
+    def startState(self):
+        return (0, None, (self.multiplicity,) * len(self.cardValues))  # total, next card (if any), multiplicity for each card
+
+    # Return set of actions possible from |state|.
+    # You do not need to modify this function.
+    # All logic for dealing with end states should be done in succAndProbReward
+    def actions(self, state):
+        return ['Take', 'Peek', 'Quit']
+
+    # Return a list of (newState, prob, reward) tuples corresponding to edges
+    # coming out of |state|.  Indicate a terminal state (after quitting or
+    # busting) by setting the deck to None. 
+    # When the probability is 0 for a particular transition, don't include that 
+    # in the list returned by succAndProbReward.
+    def succAndProbReward(self, state, action):
+        # BEGIN_YOUR_ANSWER (our solution is 44 lines of code, but don't worry if you deviate from this)
+        curr, nextCardIfPeek, deck = state
+        if deck == None:
+            return []
+        if action == 'Quit': #################################
+            return [((curr, None, None), 1, curr)]
+        if action == 'Peek': #################################
+            total = sum(deck)
+            if nextCardIfPeek:
+                return []
+            else:
+                nextStateList = []
+                for ind, amounts in enumerate(deck):
+                    if deck[ind] == 0:
+                        continue
+                    nextStateList.append(((curr, ind, deck), amounts/total, -self.peekCost))
+                return nextStateList
+        if action == 'Take': #################################
+            deck = list(deck)
+            total = sum(deck)
+            if nextCardIfPeek:
+                deck[nextCardIfPeek] -= 1
+                if curr + nextCardIfPeek > self.threshold:
+                    return [((curr + nextCardIfPeek, None, None), 1, 0)]
+                else :
+                    return [((curr + nextCardIfPeek, None, tuple(deck)), 1, 0)]
+            else:
+                nextStateList = []
+                for ind, amounts in enumerate(deck):
+                    if amounts == 0:
+                        continue
+                    deck[ind] -= 1
+                    new_value = curr + self.cardValues[ind]
+                    if new_value > self.threshold:
+                        nextStateList.append(((new_value, None, None), amounts/total, 0))
+                    elif amounts == 1 and total == 1:
+                        nextStateList.append(((new_value, None, None), amounts/total, new_value))
+                    else:
+                        nextStateList.append(((new_value, None, tuple(deck)), amounts/total, 0))
+                    deck[ind] += 1
+                return nextStateList
+        # END_YOUR_ANSWER
+
+    def discount(self):
+        return 1
+
+############################################################
+# Problem 1b: ValueIterationDP
+
+class ValueIterationDP(ValueIteration):
+    '''
+    Solve the MDP using value iteration with dynamic programming.
+    '''
+    def solve(self, mdp):
+        V = {}  # state -> value of state
+        # BEGIN_YOUR_ANSWER (our solution is 13 lines of code, but don't worry if you deviate from this)
+
+        for state in mdp.states:
+            V[state] = 0.0
+
+        sorted_states = sorted(mdp.states, key=lambda s: not any(mdp.succAndProbReward(s, a) for a in mdp.actions(s)))
+
+        for state in sorted_states:
+            if mdp.isEnd(state):
+                if state[0] <= mdp.threshold:
+                    V[state] = state[0]
+                continue
+            V[state] = max(
+                sum(prob * (reward + mdp.discount() * V[newState])
+                    for newState, prob, reward in mdp.succAndProbReward(state, action))
+                for action in mdp.actions(state)
+            )
+
+        # END_YOUR_ANSWER
+
+        # Compute the optimal policy now
+        pi = self.computeOptimalPolicy(mdp, V)
+        self.pi = pi
+        self.V = V
+
+############################################################
