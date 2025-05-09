@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="AssassinDuck.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BirdList.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BirdNode.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DodoBird.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectiveGoose.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Duck.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GGD.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Falcon.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Goose.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MorticianGoose.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AssassinDuck.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Bird.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BirdList.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BirdNode.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectiveGoose.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DodoBird.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Duck.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Falcon.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GGD.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Goose.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MorticianGoose.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{3455d2fb-1e46-40ce-8213-dd5b0246207c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{b99e87ee-a10a-4f57-8eb5-799012e59ab1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

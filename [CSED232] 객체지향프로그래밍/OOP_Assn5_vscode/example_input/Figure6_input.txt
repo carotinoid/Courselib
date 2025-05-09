@@ -1,0 +1,14 @@
+1
+Ponix
+0
+1
+Goose1
+5
+1
+Goose2
+5
+3
+Y
+Goose1
+Y
+Ponix
